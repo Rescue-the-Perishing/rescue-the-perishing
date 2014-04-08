@@ -1,0 +1,38 @@
+body > iframe { display: none; }
+
+	/* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
+		
+		.block {
+		text-align: center;
+		margin: 20px;
+	}
+
+	.block:before {
+		content: '';
+		display: inline-block;
+		height: 100%; 
+		margin-right: -0.25em; /* Adjusts for spacing */ 
+		vertical-align: middle;
+	 }
+	 
+	.centered {
+		display: inline-block;
+		padding: 10px 15px;		
+		vertical-align: middle;
+		width: 565px;			
+	}
+
+	p {
+		font-size:2em;		
+	}
+	
+	input {
+		border:0;
+		color:red;
+		font-size:3em;
+		text-align:center
+	}
+	
+	#time { 
+		color:red; 
+	}
