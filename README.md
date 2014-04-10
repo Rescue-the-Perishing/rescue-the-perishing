@@ -16,3 +16,23 @@ The Death Count page is designed to be used to increase awareness of how many pe
   
 * Simple JavaScript Inheritance
   - <http://ejohn.org/blog/simple-javascript-inheritance/>
+
+## Licenses
+### License
+Released under the MIT License (MIT). See LICENSE.md for details.
+
+### Licenses for other Components
+* Countdown for jQuery:
+  - <https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt>
+
+* HTML5 Boilerplate:
+  - <https://github.com/h5bp/html5-boilerplate/blob/master/LICENSE.md>
+
+* jQuery:
+  - <https://jquery.org/license/>
+  
+* Normalize.css:
+  - <https://github.com/necolas/normalize.css/blob/v1/LICENSE.md>
+  
+* Simple JavaScript Inheritance
+  - <http://ejohn.org/blog/simple-javascript-inheritance/>
