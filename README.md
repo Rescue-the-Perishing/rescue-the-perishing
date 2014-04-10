@@ -4,6 +4,9 @@ The Death Count page is designed to be used to increase awareness of how many pe
 ## Credits
 * Countdown for jQuery:
   - <http://www.keith-wood.name/countdown.html>
+  
+* formalize:
+  - <http://formalize.me/>
 
 * HTML5 Boilerplate:
   - <http://html5boilerplate.com/>
@@ -24,6 +27,10 @@ Released under the MIT License (MIT). See LICENSE.md for details.
 ### Licenses for other Components
 * Countdown for jQuery:
   - <https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt>
+  
+* formalize:
+  - <http://www.gnu.org/licenses/gpl.html>
+  - <http://opensource.org/licenses/mit-license.php>
 
 * HTML5 Boilerplate:
   - <https://github.com/h5bp/html5-boilerplate/blob/master/LICENSE.md>
