@@ -17,13 +17,60 @@
         <![endif]-->
     </head>
     <body>
+	
+	<form class="config_form" id="config-form">
+					<table>
+						<tbody>
+							<tr>
+								<td colspan="2">
+									<label for="population">
+										Population:
+									</label>
+									<br />
+									* <input type="text" id="population" name="population" size="32"  maxlength="12" placeholder="7176023055" required>
+								</td>
+							</tr>
+							
+							<tr>
+								<td colspan="2">
+									<label for="death-rate">
+										Crude Death Rate:
+									</label>
+									<br />
+									* <input type="text" id="death-rate" name="death-rate" size="32"  maxlength="6" placeholder="7.92" required>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<label for="reached-rate">
+										Reached Rate:
+									</label>
+									<br />
+									* <input type="text" id="reached-rate" name="reached-rate" size="32"  maxlength="4" placeholder="10" required>%
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
+									<button type="button" id="start-button" onclick="calculateMortalities()" value="Start">Start</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>			
+		</form>
+		<!--
+		Stub for checking calculations
+		<div id="results"></div>
+		-->
+	
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-				<p>In the world, more than 150,682 people die and enter eternity every day.</p>
+				<p>In the world, more than <span id="deathsPerDay">155,710</span> people die and enter eternity every day.</p>
 
 				<p>
 					Since this meeting began<br />
-					<span id="defaultCountdown"></span> 
+					<span id="defaultCountdown">0 Seconds</span> 
 					ago, the following number of persons have died and entered eternity <em>without Christ</em>:
 				</p>
 
