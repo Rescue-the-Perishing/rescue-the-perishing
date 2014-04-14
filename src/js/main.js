@@ -35,7 +35,8 @@ function calculateMortalities() {
 	var deathsPerSecond = deathsYear / secondsYear;
 	var deathsPerMinute = deathsPerSecond * SECONDS_PER_MINUTE; //extra calculation in case someone wants to use it
 	var deathsPerHour = deathsPerSecond * secondsHour; //extra calculation
-	var deathsPerDay = deathsPerSecond * secondsDay;
+	//use numeral() for number formatting
+	var deathsPerDay = numeral(deathsPerSecond * secondsDay);
 	var deathsPerWeek = deathsPerSecond * secondsWeek; //extra calculation
 	var deathsPerYear = deathsPerSecond * secondsYear; //extra calculation
 	
@@ -51,7 +52,14 @@ function calculateMortalities() {
 	var forTimeOut = 100 / deathsPerSecondLost || 69.359765000;  //not sure why deaths of lost per second is divided into 100, but it works
 
 	//Insert the calculated deaths per day into page via jQuery library
-	$('#deathsPerDay').html(Math.round(deathsPerDay))
+	//$('#deathsPerDay').html(Math.round(deathsPerDay))
+	
+	//set numeral-js default format to rounded number with comma (e.g., 1,000)
+	numeral.defaultFormat('0,0');
+	//format deathsPerDay
+	deathsPerDay = deathsPerDay.format();
+	//Insert the calculated deaths per day into page via jQuery library
+	$('#deathsPerDay').html(deathsPerDay)
 	
 	//Stub for checking calculations 
 	//Using the jQuery library to insert variables into page
