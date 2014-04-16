@@ -17,6 +17,9 @@ The Death Count page is designed to be used to increase awareness of how many pe
 * Normalize.css:
   - <http://git.io/normalize>
   
+* Numeral.js
+  - <http://numeraljs.com/>
+  
 * Simple JavaScript Inheritance
   - <http://ejohn.org/blog/simple-javascript-inheritance/>
 
@@ -40,6 +43,9 @@ Released under the MIT License (MIT). See LICENSE.md for details.
   
 * Normalize.css:
   - <https://github.com/necolas/normalize.css/blob/v1/LICENSE.md>
+  
+* Numeral.js
+  - <https://github.com/adamwdraper/Numeral-js/blob/master/LICENSE>
   
 * Simple JavaScript Inheritance
   - <http://ejohn.org/blog/simple-javascript-inheritance/>
