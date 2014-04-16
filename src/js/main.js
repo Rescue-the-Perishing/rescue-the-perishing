@@ -1,4 +1,24 @@
-function calculateMortalities() {
+function calculateLostRate() {
+/*Return the calculated lost rate based on the user provided reached-rate*/
+	//Obtain reached-rate form element
+	var reachedRate = document.getElementById("reached-rate").value;
+	
+	//Calculate lost rate
+	var lostRate = (100 - reachedRate) / 100;
+	
+	return lostRate;
+}
+
+function secondsPerPeriod(period) {
+/*Return the calculated number of seconds based on a time period argument*/
+/*The 'period' argument is expected to be one of the following strings:
+"Minute"
+"Hour"
+"Day"
+"Week"
+"Year"
+*/
+	
 	//Constant time values
 	var SECONDS_PER_MINUTE = 60;
 	var MINUTES_PER_HOUR = 60;
@@ -6,85 +26,165 @@ function calculateMortalities() {
 	var DAYS_PER_WEEK = 7;
 	var WEEKS_PER_YEAR = 52;
 	var DAYS_A_YEAR = 365;
-	
-	//Calculate amount of seconds per each time period
-	var secondsHour = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
-	var secondsDay = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY;
-	var secondsWeek = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY * DAYS_PER_WEEK;
-	var secondsYear = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY * DAYS_A_YEAR;
-		
+
+	switch (period) {
+		case "Minute":
+			return SECONDS_PER_MINUTE;
+		case "Hour":
+			var secondsHour = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
+			return secondsHour;
+		case "Day":
+			var secondsDay = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY;
+			return secondsDay;
+		case "Week":
+			var secondsWeek = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY * DAYS_PER_WEEK;
+			return secondsWeek;
+		case "Year":
+			var secondsYear = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY * DAYS_A_YEAR;
+			return secondsYear;
+		default:
+			//return error message if receive non-expected input
+			return "Please provide a string of Minute, Hour, Day, Week, or Year as the period";
+	}	
+}
+
+function calculateDeathsPerPeriod(period,type) {
+/*Return the number of people who die based on the provided period of time argument and the type argument (total deaths or deaths of lost)*/
+/*The 'period' argument is expected to be one of the following strings:
+"Second"
+"Minute"
+"Hour"
+"Day"
+"Week"
+"Year"
+
+*The 'type' argument is expected to be one of the following strings:
+"Total"
+"Lost"
+*/
+
 	//Obtain Population form element
 	var population = document.getElementById("population").value;
 
 	//Obtain Death Rate form element
 	var deathRate = document.getElementById("death-rate").value;		
 
-	//var reachedRate = document.getElementById("reached-rate").value/100;
+	//Obtain Reached Rate form element
 	var reachedRate = document.getElementById("reached-rate").value;
+	
+	//Obtain Lost Rate
+	var lostRate = calculateLostRate();
 
 	//Convert crude death rate to percentage
 	var deathRatePercentage = deathRate / 1000;
 
 	//Calculate deaths a year
 	var deathsYear = deathRatePercentage * population;
+	
+	//Calculate deaths per second
+	var deathsPerSecond = deathsYear / secondsPerPeriod("Year");
 
-	//Calculate lost rate
-	var lostRate = (100 - reachedRate) / 100;
-	
-	//Calculate deaths per period of time
-	var deathsPerSecond = deathsYear / secondsYear;
-	var deathsPerMinute = deathsPerSecond * SECONDS_PER_MINUTE; //extra calculation in case someone wants to use it
-	var deathsPerHour = deathsPerSecond * secondsHour; //extra calculation
-	//use numeral() for number formatting
-	var deathsPerDay = numeral(deathsPerSecond * secondsDay);
-	var deathsPerWeek = deathsPerSecond * secondsWeek; //extra calculation
-	var deathsPerYear = deathsPerSecond * secondsYear; //extra calculation
-	
-	//Calculate deaths of lost per period of time
-	var deathsPerSecondLost = deathsPerSecond * lostRate;
-	var deathsPerMinuteLost = deathsPerMinute * lostRate; //extra calculation
-	var deathsPerHourLost = deathsPerHour * lostRate; //extra calculation
-	var deathsPerDayLost = deathsPerDay * lostRate; //extra calculation
-	var deathsPerWeekLost = deathsPerWeek * lostRate; //extra calculation
-	var deathsPerYearLost = deathsPerYear * lostRate; //extra calculation
-	
-	//Calculate variable to use in setTimeout in the display() function
-	var forTimeOut = 100 / deathsPerSecondLost || 69.359765000;  //not sure why deaths of lost per second is divided into 100, but it works
+	if (type == "Total") {
+		switch (period) {
+			case "Second":
+				return deathsPerSecond;
+			case "Minute":
+				var deathsPerMinute = deathsPerSecond * secondsPerPeriod("Minute");
+				return deathsPerMinute;
+			case "Hour":
+				var deathsPerHour = deathsPerSecond * secondsPerPeriod("Hour");
+				return deathsPerHour;
+			case "Day":
+				var deathsPerDay = deathsPerSecond * secondsPerPeriod("Day");
+				return deathsPerDay;
+			case "Week":
+				var deathsPerWeek = deathsPerSecond * secondsPerPeriod("Week");
+				return deathsPerWeek;
+			case "Year":
+				var deathsPerYear = deathsPerSecond * secondsPerPeriod("Year");
+				return deathsPerYear;
+			default:
+				//return error message if receive non-expected input
+				return "Error 1";
+		}
+	}
+	else if (type == "Lost") {
+		switch (period) {
+			case "Second":
+				var deathsPerSecondLost = calculateDeathsPerPeriod("Second","Total") * lostRate;
+				return deathsPerSecondLost;
+			case "Minute":
+				var deathsPerMinuteLost = calculateDeathsPerPeriod("Minute","Total") * lostRate;
+				return deathsPerMinuteLost;
+			case "Hour":
+				var deathsPerHourLost = calculateDeathsPerPeriod("Hour","Total") * lostRate;
+				return deathsPerHourLost;
+			case "Day":
+				var deathsPerDayLost = calculateDeathsPerPeriod("Day","Total") * lostRate;
+				return deathsPerDayLost;
+			case "Week":
+				var deathsPerWeekLost = calculateDeathsPerPeriod("Week","Total") * lostRate;
+				return deathsPerWeekLost;
+			case "Year":
+				var deathsPerYearLost = calculateDeathsPerPeriod("Year","Total") * lostRate;
+				return deathsPerYearLost;
+			default:
+				//return error message if receive non-expected input
+				return "Error 2";
+		}
+	}
+	else {
+		//return error message if receive non-expected input
+		return "Error 3";
+	}
+}
 
-	//Insert the calculated deaths per day into page via jQuery library
-	//$('#deathsPerDay').html(Math.round(deathsPerDay))
+function calculateCounterRate() {
+/*Return the value needed to make the by  mortality rate count-up counter run at the correct rate based on user inputs*/
+
+	//Calculate variable to be used by setTimeout within the display() function
+	var forTimeOut = 100 / calculateDeathsPerPeriod("Second","Lost");  //not sure why deaths of lost per second is divided into 100, but it works
+	return forTimeOut;
+}
+
+function initiateDisplay() {
+/*Initiate and display everything when start is invoked by the user*/
+
+	//obtain the number of deaths for the specified period
+	var deathsPerPeriod = calculateDeathsPerPeriod("Day","Total");
+
+	/*reformat the output numbers*/
 	
 	//set numeral-js default format to rounded number with comma (e.g., 1,000)
-	numeral.defaultFormat('0,0');
-	//format deathsPerDay
-	deathsPerDay = deathsPerDay.format();
-	//Insert the calculated deaths per day into page via jQuery library
-	$('#deathsPerDay').html(deathsPerDay)
+	numeral.defaultFormat('0,0');	
 	
-	//Stub for checking calculations 
-	//Using the jQuery library to insert variables into page
-	//$('#results').html("Death Rate: " + deathRatePercentage + "<br /> Lost Rate: " + lostRate + "<br /> Reached Rate: " + reachedRate + "<br /> Deaths a year: " + deathsYear + "<br /> Second per Hour: " + secondsHour + "<br /> Second per Day: " + secondsDay + "<br /> Second per Week: " + secondsWeek + "<br /> Second per Year: " + secondsYear + "<br /> Deaths per Second: " + deathsPerSecond + "<br /> Deaths per Minute: " + deathsPerMinute + "<br /> Deaths per Hour: " + deathsPerHour + "<br /> Deaths per Day: " + deathsPerDay + "<br /> Deaths per Week: " + deathsPerWeek + "<br /> Deaths per Year: " + deathsPerYear + "<br /> Lost Deaths per Second: " + deathsPerSecondLost + "<br /> Lost Deaths per Minute: " + deathsPerMinuteLost + "<br /> Lost Deaths per Hour: " + deathsPerHourLost + "<br /> Lost Deaths per Day: " + deathsPerDayLost + "<br /> Lost Deaths per Week: " + deathsPerWeekLost + "<br /> Lost Deaths per Year: " + deathsPerYearLost + "<br /> Use in Code: " + forTimeOut);
-
+	//format the deaths per period using the default format
+	deathsPerPeriod = numeral(deathsPerPeriod).format();
+	
+	//Insert the calculated deaths per day into page via jQuery library
+	$('#deathsPerPeriod').html(deathsPerPeriod);
+	
+	//start the time elapsed timer
 	startTime()
+	
+	//start the mortality counter
 	display()
-	return forTimeOut;	
 }
- 
+
 function startTime() {
-	/*****************************************************************************************************		
-	If current time isn't desired, change start austDay variable to desired date/time
-	*****************************************************************************************************/			
+/*Configure and display the time elapsed timer (i.e, jquery.countdown)*/
+
 		$(function () {
+		//set variable used by jquery.countdown to the current time
 		var austDay = new Date();
-	/****************************************************************************************************
-	Define the whether to count up (since: time-variable) or countdown (until: time-variable)
-	Define the format (layout) of the counter
-	*****************************************************************************************************/
+
+		//configure jquery.countdown to start counting up (i.e., since) from the variable defined above
+		//make the display format pretty
 		$('#defaultCountdown').countdown({since: austDay, format: 'yodhmS', layout: '{d<}{dn} {dl}, {d>}{h<}{hn} {hl}, {h>}{m<}{mn} {ml}, {m>}{sn} {sl}'});
 		});
 }	
 	
-//main code for the mortality rate count-up counter
+/*Display the mortality rate count-up counter, inserting commas as necessary*/
 /*By George Chiang. (JK's ultimate JavaScript tutorial and free JavaScripts site!)
 http://www.javascriptkit.com
 Credit MUST stay intact for use*/
@@ -111,9 +211,7 @@ Credit MUST stay intact for use*/
 		}
 
 		document.d.d2.value = seconds.insertComma() 
-/*****************************************************************************************************
-Define the death rate
-//should use forTimeOut which is calculated based on provided inputs
-*****************************************************************************************************/
-		setTimeout("display()",69.359765000) 
+
+		var forTimeOut = calculateCounterRate()
+		setTimeout("display()",forTimeOut) 
 	}
