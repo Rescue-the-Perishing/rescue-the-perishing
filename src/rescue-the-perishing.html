@@ -53,6 +53,16 @@
 							
 							<tr>
 								<td>
+									<label for="location">
+										Location:
+									</label>
+									<br />
+									* <input type="text" id="location" name="location" size="32"  maxlength="48" placeholder="Location" required>%
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
 									<button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
 								</td>
 							</tr>
@@ -66,12 +76,12 @@
 	
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-				<p>In the world, more than <span id="deathsPerPeriod">155,710</span> people die and enter eternity every day.</p>
+				<p>In <span class="location-holder">the world</span>, more than <span id="deathsPerPeriod">155,710</span> people die and enter eternity every day.</p>
 
 				<p>
 					Since this meeting began<br />
 					<span id="defaultCountdown">0 Seconds</span> 
-					ago, the following number of persons have died and entered eternity <em>without Christ</em>:
+					ago, the following number of persons in <span class="location-holder">the world</span> have died and entered eternity <em>without Christ</em>:
 				</p>
 
 				<form name="d" id="d">

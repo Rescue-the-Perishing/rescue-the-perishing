@@ -153,6 +153,9 @@ function initiateDisplay() {
 	//obtain the number of deaths for the specified period
 	var deathsPerPeriod = calculateDeathsPerPeriod("Day","Total");
 
+	//Obtain Location form element
+	var location = document.getElementById("location").value;
+
 	/*reformat the output numbers*/
 	
 	//set numeral-js default format to rounded number with comma (e.g., 1,000)
@@ -163,6 +166,9 @@ function initiateDisplay() {
 	
 	//Insert the calculated deaths per day into page via jQuery library
 	$('#deathsPerPeriod').html(deathsPerPeriod);
+	
+	//Insert the location into page via jQuery library
+	$('.location-holder').html(location);
 	
 	//start the time elapsed timer
 	startTime()
