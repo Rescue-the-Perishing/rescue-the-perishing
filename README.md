@@ -13,6 +13,9 @@ The Death Count page is designed to be used to increase awareness of how many pe
   
 * jQuery:
   - <https://jquery.org>
+  
+* Magnific Popup
+  - <http://dimsemenov.com/plugins/magnific-popup/>
 
 * Normalize.css:
   - <http://git.io/normalize>
@@ -40,6 +43,9 @@ Released under the MIT License (MIT). See LICENSE.md for details.
 
 * jQuery:
   - <https://jquery.org/license/>
+  
+* Magnific Popup
+  - <https://github.com/dimsemenov/Magnific-Popup/blob/master/LICENSE>  
   
 * Normalize.css:
   - <https://github.com/necolas/normalize.css/blob/v1/LICENSE.md>
