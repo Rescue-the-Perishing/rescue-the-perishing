@@ -85,7 +85,7 @@ p {
 	font-size:2em;		
 }
 
-#d input{
+#counter {
 	border:0;
 	color:red;
 	font-size:3em;
@@ -107,22 +107,22 @@ form sup.required {
 	color:red;
 }
 
-form.config_form {
+form.config-form {
 	font-size:1.4em;
 }
 
-form.config_form  input{
+form.config-form  input{
 	font-size:1em;
 	margin-bottom:10px;
 }
 
-form.config_form  button{
+form.config-form  button{
 	float:right;
 	font-size:1.4em;
 	margin-right:20px;
 }
 
-form.config_form  label{
+form.config-form  label{
 	font-weight: bold;
 }
 
