@@ -1,3 +1,9 @@
+/*Initialize Magnific Popup when a link with class "open-configure-popup-link" is clicked*/
+	$('.open-configure-popup-link').magnificPopup({
+	  type:'inline',
+	  midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+	});
+
 function calculateLostRate() {
 /*Return the calculated lost rate based on the user provided reached-rate*/
 	//Obtain reached-rate form element
@@ -175,6 +181,9 @@ function initiateDisplay() {
 	
 	//start the mortality counter
 	display()
+	
+	//close the configuration pop-up
+	$.magnificPopup.close();
 }
 
 function startTime() {

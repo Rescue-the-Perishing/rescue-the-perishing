@@ -92,6 +92,50 @@ p {
 	text-align:center
 }
 
+.configure {
+color:#e55302;
+font-size:1.2em;
+padding-left:10px;
+}
+
+.configure  a{
+color:#e55302;
+text-decoration:none;
+}
+
+form sup.required {
+	color:red;
+}
+
+form.config_form {
+	font-size:1.4em;
+}
+
+form.config_form  input{
+	font-size:1em;
+	margin-bottom:10px;
+}
+
+form.config_form  button{
+	float:right;
+	font-size:1.4em;
+	margin-right:20px;
+}
+
+form.config_form  label{
+	font-weight: bold;
+}
+
+/*for Magnific Popup*/
+.white-popup {
+  background:#fff;
+  margin:20px auto;
+  max-width:425px;
+  padding:20px;
+  position:relative;
+  width:auto; 
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
