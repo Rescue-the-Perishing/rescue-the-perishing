@@ -237,4 +237,7 @@ function display() {
 
     //close the configuration pop-up
     $.magnificPopup.close();
+    
+    //hide the configuration link text
+    $("p.configure").hide();
 }
