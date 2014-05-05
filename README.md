@@ -1,5 +1,5 @@
-# Death Count
-The Death Count page is designed to be used to increase awareness of how many people die and enter eternity over time. One potential usage of this page is to display during a sermon to help emphasis the importance of personal evangelism.
+# Rescue the Perishing
+The Rescue the Perishing page is designed to be used to increase awareness of how many people die and enter eternity over time. One potential usage of this page is to display during a sermon to help emphasis the importance of personal evangelism.
 
 ## Credits
 * Countdown for jQuery:
