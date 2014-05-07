@@ -4,6 +4,12 @@
       midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
 
+//Show/hid advanced configuration options when clicked via jQuery library
+    $( ".show-advanced-options" ).click(function() {
+        $( "#advanced-options" ).toggle( "fast", function() {
+        });
+    });
+
 function calculateLostRate() {
 /*Return the calculated lost rate based on the user provided reached-rate*/
     "use strict";
@@ -79,7 +85,7 @@ function calculateDeathsPerPeriod(period, type) {
 
         //Obtain Death Rate form element
         deathRate = document.getElementById("death-rate").value,
-
+        
         //Obtain Lost Rate
         lostRate = calculateLostRate(),
 
@@ -203,17 +209,47 @@ function display() {
 
     setTimeout("display()", forTimeOut);
 }
+
+function insertDefaults() {
+    //Insert values into configuration form based on world statistics
+    $("#population").val("7098495231");
+    $("#death-rate").val("7.9");
+    $("#reached-rate").val("7.9");
+    $("#location").val("the world");
     
- function initiateDisplay() {
+    /*
+    References:
+    - Population: estimated world population at midyear 2013 as reported at http://www.census.gov/population/international/data/idb/region.php?N=%20Results%20&T=6&A=aggregate&RT=0&Y=2013&R=1&C=
+    - Crude Death Rate: Based on estimated death rate (per 1,000 population) for the world as reported at https://www.cia.gov/library/publications/the-world-factbook/geos/xx.html
+    - Reached Rate: Based on population percentage of Evangelicals at http://www.operationworld.org/wrld
+    */
+
+}
+
+function initiateDisplay() {
 /*Initiate and display everything when start is invoked by the user*/
 
     "use strict";
 
-    //obtain the number of deaths for the specified period
-    var deathsPerPeriod = calculateDeathsPerPeriod("Day", "Total"),
+    //Obtain output-type form element
+    var outputType = document.getElementById("output-type").value,
+
+    //Obtain summary type (total/everyone or lost)
+        summaryType = $('input[name="summary-type"]:checked').val(),
+
+    //obtain the number of deaths for the specified period and summary type
+        deathsPerPeriod = calculateDeathsPerPeriod(outputType,summaryType),
 
     //Obtain Location form element
-        location = document.getElementById("location").value;
+        location = document.getElementById("location").value,
+    
+    //Set summary type text to empty value
+        summaryTypeText = "";
+
+    //Change summary type text if lost is selected
+    if (summaryType === "Lost") {
+        summaryTypeText = "<em>lost</em> ";
+    }   
 
     /*reformat the output numbers*/
 
@@ -223,12 +259,18 @@ function display() {
     //format the deaths per period using the default format
     deathsPerPeriod = numeral(deathsPerPeriod).format();
 
+    //Insert the output-type period (day, week, etc.) into page via jQuery library
+    $('.period-holder').html(outputType.toLowerCase());
+
     //Insert the calculated deaths per day into page via jQuery library
     $('#deathsPerPeriod').html(deathsPerPeriod);
 
     //Insert the location into page via jQuery library
     $('.location-holder').html(location);
 
+    //Insert the corresponding summary-type text into page via jQuery library
+    $('.summary-type-holder').html(summaryTypeText);    
+    
     //start the time elapsed timer
     startTime();
 
