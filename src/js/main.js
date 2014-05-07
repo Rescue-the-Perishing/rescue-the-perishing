@@ -4,6 +4,12 @@
       midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
 
+//Show/hid advanced configuration options when clicked via jQuery library
+    $( ".show-advanced-options" ).click(function() {
+        $( "#advanced-options" ).toggle( "fast", function() {
+        });
+    });
+
 function calculateLostRate() {
 /*Return the calculated lost rate based on the user provided reached-rate*/
     "use strict";
@@ -79,7 +85,7 @@ function calculateDeathsPerPeriod(period, type) {
 
         //Obtain Death Rate form element
         deathRate = document.getElementById("death-rate").value,
-
+        
         //Obtain Lost Rate
         lostRate = calculateLostRate(),
 
@@ -225,8 +231,11 @@ function initiateDisplay() {
 
     "use strict";
 
+    //Obtain output-type form element
+    var outputType = document.getElementById("output-type").value,
+
     //obtain the number of deaths for the specified period
-    var deathsPerPeriod = calculateDeathsPerPeriod("Day", "Total"),
+        deathsPerPeriod = calculateDeathsPerPeriod(outputType, "Total"),
 
     //Obtain Location form element
         location = document.getElementById("location").value;
@@ -238,6 +247,9 @@ function initiateDisplay() {
 
     //format the deaths per period using the default format
     deathsPerPeriod = numeral(deathsPerPeriod).format();
+
+    //Insert the output-type period (day, week, etc.) into page via jQuery library
+    $('.period-holder').html(outputType.toLowerCase());
 
     //Insert the calculated deaths per day into page via jQuery library
     $('#deathsPerPeriod').html(deathsPerPeriod);

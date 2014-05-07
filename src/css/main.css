@@ -61,7 +61,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 /* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
-	.block {
+.block {
 	text-align: center;
 	margin: 20px;
 }
@@ -103,6 +103,17 @@ color:#e55302;
 text-decoration:none;
 }
 
+#advanced-options {
+    display: none;
+}
+
+.show-advanced-options {
+    color:#e55302;
+    font-size:.8em;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
 form sup.required {
 	color:red;
 }
@@ -124,6 +135,10 @@ form.config-form  button{
 
 form.config-form  label{
 	font-weight: bold;
+}
+
+form.config-form  select {
+font-size:1em;
 }
 
 /*for Magnific Popup*/

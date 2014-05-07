@@ -75,9 +75,29 @@
                                     
                                     <tr>
                                         <td>
-                                            
                                             <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
                                             <button type="button" id="start-button" onclick="insertDefaults()" value="Insert Defaults for World">Insert Defaults for World</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="show-advanced-options">
+                                                Additional Options
+                                            </div>
+                                            <div id="advanced-options">
+                                                <label for="output-type">
+                                                    Summarize Output By:
+                                                </label>
+                                                <br />
+                                                <select id="output-type">
+                                                    <option value ="Day">Day</option>
+                                                    <option value ="Second">Second</option>
+                                                    <option value ="Minute">Minute</option>
+                                                    <option value ="Hour">Hour</option>
+                                                    <option value ="Week">Week</option>
+                                                    <option value ="Year">Year</option>
+                                                </select>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -85,10 +105,10 @@
                 </form>
             
         </div>	
-	
+
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-				<p>More than <span id="deathsPerPeriod">153,639</span> people in <span class="location-holder">the world</span> die and enter eternity every day.</p>
+				<p>More than <span id="deathsPerPeriod">153,639</span> people in <span class="location-holder">the world</span> die and enter eternity every <span class="period-holder">day</span>.</p>
 
 				<p>
 					Since this meeting began<br />
