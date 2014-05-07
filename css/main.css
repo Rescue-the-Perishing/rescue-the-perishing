@@ -59,9 +59,9 @@ textarea {
 
 /* ==========================================================================
    Author's custom styles
-   ========================================================================== */
-/* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
-	.block {
+   ========================================================================== */  
+   /* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
+.block {
 	text-align: center;
 	margin: 20px;
 }
@@ -103,6 +103,30 @@ color:#e55302;
 text-decoration:none;
 }
 
+#advanced-options {
+    display: none;
+}
+
+#advanced-options fieldset  {
+    padding-top:5px;
+}
+
+#advanced-options .summary-type  label  {
+    font-weight: normal;
+    padding-right:20px;
+}
+
+#advanced-options legend  {
+    padding-top:15px;
+}
+
+.show-advanced-options {
+    color:#e55302;
+    font-size:.8em;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
 form sup.required {
 	color:red;
 }
@@ -118,12 +142,20 @@ form.config-form  input{
 
 form.config-form  button{
 	float:right;
-	font-size:1.4em;
+	font-size:1em;
 	margin-right:20px;
 }
 
 form.config-form  label{
 	font-weight: bold;
+}
+
+form.config-form legend {
+    font-weight: bold;
+}
+
+form.config-form  select {
+font-size:1em;
 }
 
 /*for Magnific Popup*/
