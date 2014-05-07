@@ -97,6 +97,13 @@
                                                     <option value ="Week">Week</option>
                                                     <option value ="Year">Year</option>
                                                 </select>
+                                                <fieldset class="summary-type">
+                                                    <legend>Report Summary Total For:</legend>
+                                                            <input id="everyone" name="summary-type" type="radio" value="Total" checked="checked">
+                                                                <label for="everyone">Everyone</label>
+                                                            <input id="lost" name="summary-type" type="radio" value="Lost">
+                                                                <label for="lost">Lost</label>
+                                                </fieldset>
                                             </div>
                                         </td>
                                     </tr>
@@ -108,7 +115,7 @@
 
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-				<p>More than <span id="deathsPerPeriod">153,639</span> people in <span class="location-holder">the world</span> die and enter eternity every <span class="period-holder">day</span>.</p>
+				<p>More than <span id="deathsPerPeriod">153,639</span> <span class="summary-type-holder"></span>people in <span class="location-holder">the world</span> die and enter eternity every <span class="period-holder">day</span>.</p>
 
 				<p>
 					Since this meeting began<br />

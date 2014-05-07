@@ -234,11 +234,22 @@ function initiateDisplay() {
     //Obtain output-type form element
     var outputType = document.getElementById("output-type").value,
 
-    //obtain the number of deaths for the specified period
-        deathsPerPeriod = calculateDeathsPerPeriod(outputType, "Total"),
+    //Obtain summary type (total/everyone or lost)
+        summaryType = $('input[name="summary-type"]:checked').val(),
+
+    //obtain the number of deaths for the specified period and summary type
+        deathsPerPeriod = calculateDeathsPerPeriod(outputType,summaryType),
 
     //Obtain Location form element
-        location = document.getElementById("location").value;
+        location = document.getElementById("location").value,
+    
+    //Set summary type text to empty value
+        summaryTypeText = "";
+
+    //Change summary type text if lost is selected
+    if (summaryType === "Lost") {
+        summaryTypeText = "<em>lost</em> ";
+    }   
 
     /*reformat the output numbers*/
 
@@ -257,6 +268,9 @@ function initiateDisplay() {
     //Insert the location into page via jQuery library
     $('.location-holder').html(location);
 
+    //Insert the corresponding summary-type text into page via jQuery library
+    $('.summary-type-holder').html(summaryTypeText);    
+    
     //start the time elapsed timer
     startTime();
 

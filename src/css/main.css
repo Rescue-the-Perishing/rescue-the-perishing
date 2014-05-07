@@ -59,8 +59,8 @@ textarea {
 
 /* ==========================================================================
    Author's custom styles
-   ========================================================================== */
-/* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
+   ========================================================================== */  
+   /* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
 .block {
 	text-align: center;
 	margin: 20px;
@@ -107,11 +107,24 @@ text-decoration:none;
     display: none;
 }
 
+#advanced-options fieldset  {
+    padding-top:5px;
+}
+
+#advanced-options .summary-type  label  {
+    font-weight: normal;
+    padding-right:20px;
+}
+
+#advanced-options legend  {
+    padding-top:15px;
+}
+
 .show-advanced-options {
     color:#e55302;
     font-size:.8em;
     font-weight: bold;
-    padding-top: 15px;
+    padding: 15px 0;
 }
 
 form sup.required {
@@ -135,6 +148,10 @@ form.config-form  button{
 
 form.config-form  label{
 	font-weight: bold;
+}
+
+form.config-form legend {
+    font-weight: bold;
 }
 
 form.config-form  select {
