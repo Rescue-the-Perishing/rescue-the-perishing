@@ -258,8 +258,7 @@ function initiateDisplay() {
         rtpLost = "<em>lost</em> people in",
         rtpEternity = "die and enter eternity every",
         rtpBegan = "Since",
-        rtpAgo = "ago, the following number of persons in",
-        rtpEnter = "have died and entered eternity <em>without Christ</em>",
+        rtpAgo = "ago, the following number of those people have died and entered eternity <em>without Christ</em>:",
         rtpSecond = "Second",
         rtpMinute = "Minute",
         rtpHour = "Hour",
@@ -275,8 +274,7 @@ function initiateDisplay() {
         rtpLost = "personas <em>perdidas</em> en",
         rtpEternity = "mueren y entran a la eternidad cada";
         rtpBegan = "Desde";
-        rtpAgo = "atrás, el siguiente número de personas en";
-        rtpEnter = "han muerto y entrado a la eternidad <em>sin Cristo</em>";
+        rtpAgo = "atrás, el siguiente número de esas personas han muerto y entrado a la eternidad <em>sin Cristo</em>";
         rtpSecond = "Segundo";
         rtpMinute = "Minuto";
         rtpHour = "Hora";
@@ -327,7 +325,6 @@ function initiateDisplay() {
     $('.rtp-eternity').html(rtpEternity);
     $('.rtp-began').html(rtpBegan);
     $('.rtp-ago').html(rtpAgo);
-    $('.rtp-enter').html(rtpEnter);
 
     //set numeral-js default format to rounded number with comma (e.g., 1,000)
     numeral.defaultFormat('0,0');
