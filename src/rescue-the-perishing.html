@@ -18,7 +18,7 @@
         <![endif]-->
     </head>
     <body>
-	
+
         <!--
         When clicked, this link will open the configuration form (configure-popup div). It is initialized within main.js.
         -->
@@ -42,7 +42,7 @@
                                             <sup class="required">*</sup> <input type="text" id="population" name="population" size="32"  maxlength="12" placeholder="Enter the location's population" required>
                                         </td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <td colspan="2">
                                             <label for="death-rate">
@@ -62,7 +62,7 @@
                                             <sup class="required">*</sup> <input type="text" id="reached-rate" name="reached-rate" size="32"  maxlength="4" placeholder="Enter the reached rate" required>%
                                         </td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <td>
                                             <label for="location">
@@ -72,7 +72,7 @@
                                             <sup class="required">*</sup> <input type="text" id="location" name="location" size="32"  maxlength="48" placeholder="Enter the location's name" required>
                                         </td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <td>
                                             <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
@@ -93,10 +93,11 @@
                                                 <select id="language">
                                                     <option value ="English">English</option>
                                                     <option value ="Spanish">español</option>
+                                                    <option value ="Portuguese">português</option>
                                                 </select>
-                                                
+
                                                 <br />
-                                                
+
                                                 <label for="output-type">
                                                     Summarize Output By:
                                                 </label>
@@ -109,7 +110,7 @@
                                                     <option value ="Week">Week</option>
                                                     <option value ="Year">Year</option>
                                                 </select>
-                                                
+
                                                 <fieldset class="summary-type">
                                                     <legend>Report Summary Total For:</legend>
                                                             <input id="everyone" name="summary-type" type="radio" value="Total" checked="checked">
@@ -121,17 +122,17 @@
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>			
+                            </table>
                 </form>
-            
+
         </div>
 
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-                <p><span class="rtp-approximately">Approximately</span> <span id="deathsPerPeriod">153,639</span> <span class="rtp-people">people in</span> <span class="location-holder">the world</span> <span class="rtp-eternity">die and enter eternity every</span> <span class="period-holder">day</span>.</p>
+                <p><span class="rtp-approximately">Approximately</span> <span id="deathsPerPeriod">153,639</span> <span class="rtp-people">people in</span> <span class="location-holder">the world</span> <span class="rtp-eternity">die every</span> <span class="period-holder">day</span>.</p>
 
                 <p>
-                    <span class="rtp-began">Since</span> <span id="defaultCountdown">0 Seconds</span> 
+                    <span class="rtp-began">Since</span> <span id="defaultCountdown">0 Seconds</span>
                     <span class="rtp-ago">ago, the following number of those people have died and entered eternity <em>without Christ</em>:</span>
                 </p>
 
@@ -144,10 +145,12 @@
         <script src="js/vendor/countdown/jquery.plugin.min.js"></script>
         <script src="js/vendor/countdown/jquery.countdown.min.js"></script>
         <script src="js/vendor/countdown/jquery.countdown-es.js"></script>
+        <script src="js/vendor/countdown/jquery.countdown-pt-BR.js"></script>
         <script src="js/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
         <script src="js/vendor/formalize/jquery.formalize.min.js"></script>
         <script src="js/vendor/numeral-js/numeral.min.js"></script>
         <script src="js/vendor/numeral-js/languages/es.min.js"></script>
+        <script src="js/vendor/numeral-js/languages/pt-br.min.js"></script>
         <script src="js/main.js"></script>
 	</body>
 </html>

@@ -256,7 +256,7 @@ function initiateDisplay() {
         rtpApproximately = "Approximately",
         rtpPeople = "people in",
         rtpLost = "<em>lost</em> people in",
-        rtpEternity = "die and enter eternity every",
+        rtpEternity = "die every",
         rtpBegan = "Since",
         rtpAgo = "ago, the following number of those people have died and entered eternity <em>without Christ</em>:",
         rtpSecond = "Second",
@@ -272,7 +272,7 @@ function initiateDisplay() {
         rtpApproximately = "Aproximadamente";
         rtpPeople = "personas en";
         rtpLost = "personas <em>perdidas</em> en",
-        rtpEternity = "mueren y entran a la eternidad cada";
+        rtpEternity = "mueren cada";
         rtpBegan = "Desde";
         rtpAgo = "atrás, el siguiente número de esas personas han muerto y entrado a la eternidad <em>sin Cristo</em>";
         rtpSecond = "Segundo";
@@ -281,6 +281,22 @@ function initiateDisplay() {
         rtpDay = "Día";
         rtpWeek = "Semana";
         rtpYear = "Año";
+        }
+        
+    if (language === "Portuguese") {
+        rtpLanguageCode = "pt-br";
+        rtpApproximately = "Aproximadamente";
+        rtpPeople = "pessoas em";
+        rtpLost = "pessoas <em>perdidas</em> em",
+        rtpEternity = "morrem a cada";
+        rtpBegan = "Nos últimos";
+        rtpAgo = "o seguinte numero dessas pessoas acabaram de morrer e passarão a vida eterna <em>sem Jesus Cristo</em>:";
+        rtpSecond = "Segundo";
+        rtpMinute = "Minuto";
+        rtpHour = "Hora";
+        rtpDay = "Dia";
+        rtpWeek = "Semana";
+        rtpYear = "Ano";
         }
 
     //Change summary type text if lost is selected
