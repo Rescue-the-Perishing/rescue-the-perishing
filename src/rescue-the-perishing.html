@@ -85,6 +85,18 @@
                                                 Additional Options
                                             </div>
                                             <div id="advanced-options">
+
+                                                <label for="language">
+                                                    Language:
+                                                </label>
+                                                <br />
+                                                <select id="language">
+                                                    <option value ="English">English</option>
+                                                    <option value ="Spanish">español</option>
+                                                </select>
+                                                
+                                                <br />
+                                                
                                                 <label for="output-type">
                                                     Summarize Output By:
                                                 </label>
@@ -97,6 +109,7 @@
                                                     <option value ="Week">Week</option>
                                                     <option value ="Year">Year</option>
                                                 </select>
+                                                
                                                 <fieldset class="summary-type">
                                                     <legend>Report Summary Total For:</legend>
                                                             <input id="everyone" name="summary-type" type="radio" value="Total" checked="checked">
@@ -111,17 +124,16 @@
                             </table>			
                 </form>
             
-        </div>	
+        </div>
 
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-				<p>More than <span id="deathsPerPeriod">153,639</span> <span class="summary-type-holder"></span>people in <span class="location-holder">the world</span> die and enter eternity every <span class="period-holder">day</span>.</p>
+                <p><span class="rtp-approximately">Approximately</span> <span id="deathsPerPeriod">153,639</span> <span class="rtp-people">people in</span> <span class="location-holder">the world</span> <span class="rtp-eternity">die and enter eternity every</span> <span class="period-holder">day</span>.</p>
 
-				<p>
-					Since this meeting began<br />
-					<span id="defaultCountdown">0 Seconds</span> 
-					ago, the following number of persons in <span class="location-holder">the world</span> have died and entered eternity <em>without Christ</em>:
-				</p>
+                <p>
+                    <span class="rtp-began">Since</span> <span id="defaultCountdown">0 Seconds</span> 
+                    <span class="rtp-ago">ago, the following number of persons in </span> <span class="location-holder">the world</span> <span class="rtp-enter">have died and entered eternity <em>without Christ</em></span>:
+                </p>
 
 				<form name="counterContainer">
 					<input type="text" id="counter" size="10">
@@ -131,9 +143,11 @@
         <script src="js/vendor/jquery/jquery-2.1.0.min.js"></script>
         <script src="js/vendor/countdown/jquery.plugin.min.js"></script>
         <script src="js/vendor/countdown/jquery.countdown.min.js"></script>
+        <script src="js/vendor/countdown/jquery.countdown-es.js"></script>
         <script src="js/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
         <script src="js/vendor/formalize/jquery.formalize.min.js"></script>
         <script src="js/vendor/numeral-js/numeral.min.js"></script>
+        <script src="js/vendor/numeral-js/languages/es.min.js"></script>
         <script src="js/main.js"></script>
 	</body>
 </html>
