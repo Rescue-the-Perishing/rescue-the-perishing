@@ -259,6 +259,7 @@ function initiateDisplay() {
         rtpEternity = "die every",
         rtpBegan = "Since",
         rtpAgo = "ago, the following number of those people have died and entered eternity <em>without Christ</em>:",
+        rtpDownload = "Download",
         rtpSecond = "Second",
         rtpMinute = "Minute",
         rtpHour = "Hour",
@@ -275,6 +276,7 @@ function initiateDisplay() {
         rtpEternity = "mueren cada";
         rtpBegan = "Desde";
         rtpAgo = "atrás, el siguiente número de esas personas han muerto y entrado a la eternidad <em>sin Cristo</em>";
+        rtpDownload = "Descargar";
         rtpSecond = "Segundo";
         rtpMinute = "Minuto";
         rtpHour = "Hora";
@@ -291,6 +293,7 @@ function initiateDisplay() {
         rtpEternity = "morrem a cada";
         rtpBegan = "Nos últimos";
         rtpAgo = "o seguinte numero dessas pessoas acabaram de morrer e passarão a vida eterna <em>sem Jesus Cristo</em>:";
+        rtpDownload = "Baixar";
         rtpSecond = "Segundo";
         rtpMinute = "Minuto";
         rtpHour = "Hora";
@@ -341,6 +344,7 @@ function initiateDisplay() {
     $('.rtp-eternity').html(rtpEternity);
     $('.rtp-began').html(rtpBegan);
     $('.rtp-ago').html(rtpAgo);
+    $('.rtp-download').html(rtpDownload);
 
     //set numeral-js default format to rounded number with comma (e.g., 1,000)
     numeral.defaultFormat('0,0');
