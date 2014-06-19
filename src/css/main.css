@@ -91,16 +91,14 @@ p {
 	font-size:3em;
 	text-align:center
 }
-
 .configure {
-color:#e55302;
-font-size:1.2em;
-padding-left:10px;
+    font-size:1.2em;
+    padding-left:10px;
 }
 
 .configure  a{
-color:#e55302;
-text-decoration:none;
+    color:#e55302;
+    text-decoration:none;
 }
 
 #advanced-options {
@@ -122,6 +120,20 @@ text-decoration:none;
 
 #defaultCountdown {
 text-transform: lowercase;
+}
+
+#download {
+    bottom: .5em;
+    color:#999;
+    font-size:.5em;
+    padding-right:10px;
+    position: absolute;
+    right: 0;
+    text-decoration:none;
+}
+
+.pull-right {
+    float: right;
 }
 
 .show-advanced-options {
