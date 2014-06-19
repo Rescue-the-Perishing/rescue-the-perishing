@@ -49,7 +49,7 @@
                                                 Crude Death Rate:
                                             </label>
                                             <br />
-                                            <sup class="required">*</sup> <input type="text" id="death-rate" name="death-rate" size="32"  maxlength="6" placeholder="Enter the crude death rate" required>
+                                            <sup class="required">*</sup> <input type="text" id="death-rate" name="death-rate" size="32"  maxlength="6" placeholder="Enter deaths per 1,000 per year" required>
                                         </td>
                                     </tr>
 
@@ -59,7 +59,7 @@
                                                 Reached Rate:
                                             </label>
                                             <br />
-                                            <sup class="required">*</sup> <input type="text" id="reached-rate" name="reached-rate" size="32"  maxlength="4" placeholder="Enter the reached rate" required>%
+                                            <sup class="required">*</sup> <input type="text" id="reached-rate" name="reached-rate" size="32"  maxlength="4" placeholder="Enter the percentage of Christians" required>%
                                         </td>
                                     </tr>
 
@@ -76,7 +76,7 @@
                                     <tr>
                                         <td>
                                             <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
-                                            <button type="button" id="start-button" onclick="insertDefaults()" value="Insert Defaults for World">Insert Defaults for World</button>
+                                            <button type="button" id="start-button" onclick="insertDefaults()" value="Preview Defaults">Preview Defaults</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -129,10 +129,10 @@
 
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-                <p><span class="rtp-approximately">Approximately</span> <span id="deathsPerPeriod">153,639</span> <span class="rtp-people">people in</span> <span class="location-holder">the world</span> <span class="rtp-eternity">die every</span> <span class="period-holder">day</span>.</p>
+                <p><span class="rtp-approximately">Around</span> <span id="deathsPerPeriod">153,639</span> <span class="rtp-people">people in</span> <span class="location-holder">the world</span> <span class="rtp-eternity">die every</span> <span class="period-holder">day</span>.</p>
 
                 <p>
-                    <span class="rtp-began">Since</span> <span id="defaultCountdown">0 Seconds</span>
+                    <span class="rtp-began">Since</span> <span id="defaultCountdown">0 seconds</span>
                     <span class="rtp-ago">ago, the following number of those people have died and entered eternity <em>without Christ</em>:</span>
                 </p>
 

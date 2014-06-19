@@ -253,7 +253,7 @@ function initiateDisplay() {
 
     //Initiate variables to hold translations
         rtpLanguageCode = "",
-        rtpApproximately = "Approximately",
+        rtpApproximately = "Around",
         rtpPeople = "people in",
         rtpLost = "<em>lost</em> people in",
         rtpEternity = "die every",
@@ -269,7 +269,7 @@ function initiateDisplay() {
     /*Show different translations based on selected language*/
     if (language === "Spanish") {
         rtpLanguageCode = "es";
-        rtpApproximately = "Aproximadamente";
+        rtpApproximately = "Acerca de";
         rtpPeople = "personas en";
         rtpLost = "personas <em>perdidas</em> en",
         rtpEternity = "mueren cada";
@@ -285,7 +285,7 @@ function initiateDisplay() {
         
     if (language === "Portuguese") {
         rtpLanguageCode = "pt-br";
-        rtpApproximately = "Aproximadamente";
+        rtpApproximately = "Cerca de";
         rtpPeople = "pessoas em";
         rtpLost = "pessoas <em>perdidas</em> em",
         rtpEternity = "morrem a cada";
