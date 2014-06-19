@@ -126,6 +126,7 @@ text-transform: lowercase;
 
 .show-advanced-options {
     color:#e55302;
+    cursor:pointer;
     font-size:.8em;
     font-weight: bold;
     padding: 15px 0;
