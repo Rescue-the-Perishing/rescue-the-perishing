@@ -120,6 +120,10 @@ text-decoration:none;
     padding-top:15px;
 }
 
+#defaultCountdown {
+text-transform: lowercase;
+}
+
 .show-advanced-options {
     color:#e55302;
     font-size:.8em;
