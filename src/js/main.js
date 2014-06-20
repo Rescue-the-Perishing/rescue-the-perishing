@@ -331,7 +331,7 @@ function ok() {
     //set language for numeral-js based on provided language code
     numeral.language(obtainLanguageCode(language));
 
-    //change 0 seconds placeholder wording based on language code
+    //change 0 seconds place-holder wording based on language code
     rtpDefaultCountdown = "0 " + rtpSeconds;
 
     //Set period text based on user's selection (Second, Minute, Hour, Day, Week, or Year) and corresponding translation
@@ -395,8 +395,20 @@ function initiateDisplay() {
 
     "use strict";
 
-    //Obtain language form element
-    var language = document.getElementById("language").value;
+    //Obtain necessary form elements
+    var population = document.getElementById("population").value,
+        deathRate = document.getElementById("death-rate").value,
+        location = document.getElementById("location").value,
+        reachedRate = document.getElementById("reached-rate").value,
+        language = document.getElementById("language").value;
+
+    //if form is blank, insert default values before running
+    if (population === "" && deathRate === "" && location === "" && reachedRate === "") {
+        //Insert values into configuration form based on world statistics
+        $("#population").val("7098495231");
+        $("#death-rate").val("7.9");
+        $("#reached-rate").val("7.9");
+    }
 
     //start the time elapsed timer, passing in selected language
     startTime(obtainLanguageCode(language));
