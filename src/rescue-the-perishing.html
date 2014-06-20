@@ -22,7 +22,10 @@
         <!--
         When clicked, this link will open the configuration form (configure-popup div). It is initialized within main.js.
         -->
-        <p class="configure"><a href="#configure-popup" class="open-configure-popup-link">Configure</a></p>
+        <p class="configure">
+            <a href="#configure-popup" class="open-configure-popup-link">Configure</a> | 
+            <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
+        </p>
 
         <!--
         Place the configuration form inside a div for an inline Magnific Popup
@@ -75,8 +78,8 @@
 
                                     <tr>
                                         <td>
-                                            <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
-                                            <button type="button" id="start-button" onclick="insertDefaults()" value="Preview Defaults">Preview Defaults</button>
+                                            <button type="button" id="ok-button" onclick="ok()" value="OK">OK</button>
+                                            <button type="button" id="preview-button" onclick="insertDefaults()" value="Preview Defaults">Preview Defaults</button>
                                         </td>
                                     </tr>
                                     <tr>

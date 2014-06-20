@@ -160,7 +160,7 @@ function calculateCounterRate() {
     return forTimeOut;
 }
 
-function startTime(lang) {
+function startTime(languageCode) {
 /*Configure and display the time elapsed timer (i.e, jquery.countdown)*/
 
     "use strict";
@@ -172,7 +172,7 @@ function startTime(lang) {
 
         //configure jquery.countdown to start counting up (i.e., since) from the variable defined above
         //make the display format pretty
-        $('#defaultCountdown').countdown($.extend({since: austDay, format: 'yodhmS', layout: '{d<}{dn} {dl}, {d>}{h<}{hn} {hl}, {h>}{m<}{mn} {ml}, {m>}{sn} {sl}'},$.countdown.regionalOptions[lang]));
+        $('#defaultCountdown').countdown($.extend({since: austDay, format: 'yodhmS', layout: '{d<}{dn} {dl}, {d>}{h<}{hn} {hl}, {h>}{m<}{mn} {ml}, {m>}{sn} {sl}'},$.countdown.regionalOptions[languageCode]));
 
     });
 }
@@ -228,8 +228,31 @@ function insertDefaults() {
 
 }
 
-function initiateDisplay() {
-/*Initiate and display everything when start is invoked by the user*/
+function obtainLanguageCode(language) {
+/*Return the language code based on user selected language*/
+
+    "use strict";
+
+    var languageCode = "";
+
+    //language codes used must match one of the provided translation files within src/js/vendor/countdown and src/js/vendor/numeral-js/languages
+    switch (language) {
+    case "Spanish":
+        languageCode = "es";
+        break;
+    case "Portuguese":
+        languageCode = "pt-br";
+        break;
+    default:
+        //default to blank if none of the above match (a blank language code will use English)
+        languageCode = "";
+    }
+
+    return languageCode;
+}
+
+function ok() {
+/*Start the timer and counter and hide buttons*/
 
     "use strict";
 
@@ -245,22 +268,20 @@ function initiateDisplay() {
     //Obtain Location form element
         location = document.getElementById("location").value,
 
-    //Create language variable to be used to localize jquery.countdown (an empty string defaults to English)
-        lang = "",
-
     //Obtain language form element
         language = document.getElementById("language").value,
 
     //Initiate variables to hold translations
-        rtpLanguageCode = "",
         rtpApproximately = "Around",
         rtpPeople = "people in",
         rtpLost = "<em>lost</em> people in",
         rtpEternity = "die every",
         rtpBegan = "Since",
         rtpAgo = "ago, the following number of those people have died and entered eternity <em>without Christ</em>:",
+        rtpDefaultCountdown = "0 seconds",
         rtpDownload = "Download",
         rtpSecond = "Second",
+        rtpSeconds = "Seconds",
         rtpMinute = "Minute",
         rtpHour = "Hour",
         rtpDay = "Day",
@@ -269,49 +290,49 @@ function initiateDisplay() {
 
     /*Show different translations based on selected language*/
     if (language === "Spanish") {
-        rtpLanguageCode = "es";
         rtpApproximately = "Acerca de";
         rtpPeople = "personas en";
-        rtpLost = "personas <em>perdidas</em> en",
+        rtpLost = "personas <em>perdidas</em> en";
         rtpEternity = "mueren cada";
         rtpBegan = "Desde";
         rtpAgo = "atrás, el siguiente número de esas personas han muerto y entrado a la eternidad <em>sin Cristo</em>";
         rtpDownload = "Descargar";
         rtpSecond = "Segundo";
+        rtpSeconds = "Segundos";
         rtpMinute = "Minuto";
         rtpHour = "Hora";
         rtpDay = "Día";
         rtpWeek = "Semana";
         rtpYear = "Año";
-        }
-        
+    }
+
     if (language === "Portuguese") {
-        rtpLanguageCode = "pt-br";
         rtpApproximately = "Cerca de";
         rtpPeople = "pessoas em";
-        rtpLost = "pessoas <em>perdidas</em> em",
+        rtpLost = "pessoas <em>perdidas</em> em";
         rtpEternity = "morrem a cada";
         rtpBegan = "Nos últimos";
         rtpAgo = "o seguinte numero dessas pessoas acabaram de morrer e passarão a vida eterna <em>sem Jesus Cristo</em>:";
         rtpDownload = "Baixar";
         rtpSecond = "Segundo";
+        rtpSeconds = "Segundos";
         rtpMinute = "Minuto";
         rtpHour = "Hora";
         rtpDay = "Dia";
         rtpWeek = "Semana";
         rtpYear = "Ano";
-        }
+    }
 
     //Change summary type text if lost is selected
     if (type === "Lost") {
         rtpPeople = rtpLost;
     }
-    
-    //switch number format based on provided language code
-    numeral.language(rtpLanguageCode);
 
-    //set language for jquery.countdown based on provided language code
-    lang = rtpLanguageCode;
+    //set language for numeral-js based on provided language code
+    numeral.language(obtainLanguageCode(language));
+
+    //change 0 seconds placeholder wording based on language code
+    rtpDefaultCountdown = "0 " + rtpSeconds;
 
     //Set period text based on user's selection (Second, Minute, Hour, Day, Week, or Year) and corresponding translation
     switch (period) {
@@ -344,6 +365,7 @@ function initiateDisplay() {
     $('.rtp-eternity').html(rtpEternity);
     $('.rtp-began').html(rtpBegan);
     $('.rtp-ago').html(rtpAgo);
+    $('#defaultCountdown').html(rtpDefaultCountdown);
     $('.rtp-download').html(rtpDownload);
 
     //set numeral-js default format to rounded number with comma (e.g., 1,000)
@@ -364,14 +386,23 @@ function initiateDisplay() {
     //Insert the corresponding summary-type text into page via jQuery library
     $('.summary-type-holder').html(rtpPeople);
 
+    //close the configuration pop-up
+    $.magnificPopup.close();
+}
+
+function initiateDisplay() {
+/*Initiate and display everything when start is invoked by the user*/
+
+    "use strict";
+
+    //Obtain language form element
+    var language = document.getElementById("language").value;
+
     //start the time elapsed timer, passing in selected language
-    startTime(lang);
+    startTime(obtainLanguageCode(language));
 
     //start the mortality counter
     display();
-
-    //close the configuration pop-up
-    $.magnificPopup.close();
 
     //hide the configuration link text
     $("p.configure").hide();

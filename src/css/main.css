@@ -119,7 +119,7 @@ p {
 }
 
 #defaultCountdown {
-text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 #download {
@@ -142,6 +142,16 @@ text-transform: lowercase;
     font-size:.8em;
     font-weight: bold;
     padding: 15px 0;
+}
+
+#start-button {
+    background:none;
+    border:none;
+    color:#e55302;
+    font-size:1em;
+    font-weight: normal;
+    padding:0;
+    vertical-align:bottom;
 }
 
 form sup.required {
@@ -172,7 +182,7 @@ form.config-form legend {
 }
 
 form.config-form  select {
-font-size:1em;
+    font-size:1em;
 }
 
 /*for Magnific Popup*/
