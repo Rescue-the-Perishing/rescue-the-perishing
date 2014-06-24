@@ -277,7 +277,7 @@ function ok() {
         rtpLost = "<em>lost</em> people in",
         rtpEternity = "die every",
         rtpBegan = "Since",
-        rtpAgo = "ago, the following number of those people have died and entered eternity <em>without Christ</em>:",
+        rtpAgo = "ago, the following number of those people have entered eternity <em>without Christ</em>:",
         rtpDefaultCountdown = "0 seconds",
         rtpDownload = "Download",
         rtpSecond = "Second",
@@ -295,7 +295,7 @@ function ok() {
         rtpLost = "personas <em>perdidas</em> en";
         rtpEternity = "mueren cada";
         rtpBegan = "Desde";
-        rtpAgo = "atrás, el siguiente número de esas personas han muerto y entrado a la eternidad <em>sin Cristo</em>";
+        rtpAgo = "atrás, el siguiente número de esas personas han entrado a la eternidad <em>sin Cristo</em>";
         rtpDownload = "Descargar";
         rtpSecond = "Segundo";
         rtpSeconds = "Segundos";
@@ -312,7 +312,7 @@ function ok() {
         rtpLost = "pessoas <em>perdidas</em> em";
         rtpEternity = "morrem a cada";
         rtpBegan = "Nos últimos";
-        rtpAgo = "o seguinte numero dessas pessoas acabaram de morrer e passarão a vida eterna <em>sem Jesus Cristo</em>:";
+        rtpAgo = "o seguinte número dessas pessoas passaram a vida eterna <em>sem Jesus Cristo</em>:";
         rtpDownload = "Baixar";
         rtpSecond = "Segundo";
         rtpSeconds = "Segundos";
