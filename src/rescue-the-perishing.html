@@ -23,7 +23,7 @@
         When clicked, this link will open the configuration form (configure-popup div). It is initialized within main.js.
         -->
         <p class="configure">
-            <a href="#configure-popup" class="open-configure-popup-link">Configure</a> | 
+            <a href="#configure-popup" class="open-configure-popup-link">Configure</a> |
             <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
         </p>
 
@@ -116,7 +116,7 @@
 
                                                 <fieldset class="summary-type">
                                                     <legend>Report Summary Total For:</legend>
-                                                            <input id="everyone" name="summary-type" type="radio" value="Total" checked="checked">
+                                                            <input id="everyone" name="summary-type" type="radio" value="Everyone" checked="checked">
                                                                 <label for="everyone">Everyone</label>
                                                             <input id="lost" name="summary-type" type="radio" value="Lost">
                                                                 <label for="lost">Lost</label>
@@ -132,11 +132,11 @@
 
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-                <p><span class="rtp-approximately">Around</span> <span id="deathsPerPeriod">153,639</span> <span class="rtp-people">people in</span> <span class="location-holder">the world</span> <span class="rtp-eternity">die every</span> <span class="period-holder">day</span>.</p>
+                <p><span class="rtp-approximately"></span> <span id="deathsPerPeriod"></span> <span class="rtp-people"></span> <span class="location-holder"></span> <span class="rtp-eternity"></span> <span class="period-holder"></span>.</p>
 
                 <p>
-                    <span class="rtp-began">Since</span> <span id="defaultCountdown">0 seconds</span>
-                    <span class="rtp-ago">ago, the following number of those people have entered eternity <em>without Christ</em>:</span>
+                    <span class="rtp-began"></span> <span id="defaultCountdown"></span>
+                    <span class="rtp-ago"></span>
                 </p>
 
 				<form name="counterContainer">
@@ -144,9 +144,9 @@
 				</form>
 			</div>
 		</div>
-        
+
         <p><a href="https://github.com/Rescue-the-Perishing/rescue-the-perishing" class="pull-right" id="download"><span class="rtp-download">Download</span></a></p>
-        
+
         <script src="js/vendor/jquery/jquery-2.1.0.min.js"></script>
         <script src="js/vendor/countdown/jquery.plugin.min.js"></script>
         <script src="js/vendor/countdown/jquery.countdown.min.js"></script>
@@ -157,6 +157,8 @@
         <script src="js/vendor/numeral-js/numeral.min.js"></script>
         <script src="js/vendor/numeral-js/languages/es.min.js"></script>
         <script src="js/vendor/numeral-js/languages/pt-br.min.js"></script>
+        <script src="config/defaults.js"></script>
+        <script src="config/languages.js"></script>
         <script src="js/main.js"></script>
 	</body>
 </html>
