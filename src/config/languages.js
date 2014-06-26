@@ -24,7 +24,7 @@
         rtp_Lost : "personas <em>perdidas</em> en",
         rtp_Eternity : "mueren cada",
         rtp_Began : "Desde",
-        rtp_Ago : "atrás, el siguiente número de esas personas han entrado a la eternidad <em>sin Cristo</em>",
+        rtp_Ago : "atrás, el siguiente número de esas personas han entrado a la eternidad <em>sin Cristo</em>:",
         rtp_Download : "Descargar",
         rtp_Second : "Segundo",
         rtp_Seconds : "Segundos",
