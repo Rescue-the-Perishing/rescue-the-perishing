@@ -59,8 +59,8 @@ textarea {
 
 /* ==========================================================================
    Author's custom styles
-   ========================================================================== */  
-   /* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
+   ========================================================================== */
+   /* .block, .block:before, .centered are for vertically and horizontally centering the page */
 .block {
 	text-align: center;
 	margin: 20px;
@@ -69,20 +69,20 @@ textarea {
 .block:before {
 	content: '';
 	display: inline-block;
-	height: 100%; 
-	margin-right: -0.25em; /* Adjusts for spacing */ 
+	height: 100%;
+	margin-right: -0.25em; /* Adjusts for spacing */
 	vertical-align: middle;
  }
- 
+
 .centered {
 	display: inline-block;
-	padding: 10px 15px;		
+	padding: 10px 15px;
 	vertical-align: middle;
-	width: 565px;			
+	width: 565px;
 }
 
 p {
-	font-size:2em;		
+	font-size:2em;
 }
 
 #counter {
@@ -192,7 +192,7 @@ form.config-form  select {
   max-width:425px;
   padding:20px;
   position:relative;
-  width:auto; 
+  width:auto;
 }
 
 /* ==========================================================================
