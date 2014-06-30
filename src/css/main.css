@@ -83,6 +83,7 @@ textarea {
 
 p {
 	font-size:2em;
+    margin-bottom:0;
 }
 
 #counter {
