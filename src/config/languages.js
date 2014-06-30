@@ -6,7 +6,6 @@
         rtp_Eternity : "die every",
         rtp_Began : "Since",
         rtp_Ago : "ago, the following number of those people have entered eternity <em>without Christ</em>:",
-        rtp_DefaultCountdown : "0 seconds",
         rtp_Download : "Download",
         rtp_Second : "Second",
         rtp_Seconds : "Seconds",
