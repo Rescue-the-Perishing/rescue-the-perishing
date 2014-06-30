@@ -515,6 +515,9 @@ $(document).ready(function () {
     //Insert items not set by the setWording function
     $('#deathsPerPeriod').html(deathsPerPeriod);
     $('.period-holder').html(period.toLowerCase());
+    
+    //Ensure the real-time mortality counter returns to 0 on page reload (without doing this IE retains old counter value)
+    $('#counter').val("0");
 
     //make page wording show the selected translation
     setWording(defaults.language);
