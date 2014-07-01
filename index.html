@@ -18,11 +18,14 @@
         <![endif]-->
     </head>
     <body>
-	
+
         <!--
         When clicked, this link will open the configuration form (configure-popup div). It is initialized within main.js.
         -->
-        <p class="configure"><a href="#configure-popup" class="open-configure-popup-link">Configure</a></p>
+        <p class="configure">
+            <a href="#configure-popup" class="open-configure-popup-link">Configure</a> |
+            <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
+        </p>
 
         <!--
         Place the configuration form inside a div for an inline Magnific Popup
@@ -42,14 +45,14 @@
                                             <sup class="required">*</sup> <input type="text" id="population" name="population" size="32"  maxlength="12" placeholder="Enter the location's population" required>
                                         </td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <td colspan="2">
                                             <label for="death-rate">
                                                 Crude Death Rate:
                                             </label>
                                             <br />
-                                            <sup class="required">*</sup> <input type="text" id="death-rate" name="death-rate" size="32"  maxlength="6" placeholder="Enter the crude death rate" required>
+                                            <sup class="required">*</sup> <input type="text" id="death-rate" name="death-rate" size="32"  maxlength="6" placeholder="Enter deaths per 1,000 per year" required>
                                         </td>
                                     </tr>
 
@@ -59,10 +62,10 @@
                                                 Reached Rate:
                                             </label>
                                             <br />
-                                            <sup class="required">*</sup> <input type="text" id="reached-rate" name="reached-rate" size="32"  maxlength="4" placeholder="Enter the reached rate" required>%
+                                            <sup class="required">*</sup> <input type="text" id="reached-rate" name="reached-rate" size="32"  maxlength="4" placeholder="Enter the percentage of Christians" required>%
                                         </td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <td>
                                             <label for="location">
@@ -72,11 +75,11 @@
                                             <sup class="required">*</sup> <input type="text" id="location" name="location" size="32"  maxlength="48" placeholder="Enter the location's name" required>
                                         </td>
                                     </tr>
-                                    
+
                                     <tr>
                                         <td>
-                                            <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
-                                            <button type="button" id="start-button" onclick="insertDefaults()" value="Insert Defaults for World">Insert Defaults for World</button>
+                                            <button type="button" id="ok-button" onclick="ok()" value="OK">OK</button>
+                                            <button type="button" id="preview-button" onclick="insertDefaults()" value="Preview Defaults">Preview Defaults</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -85,6 +88,19 @@
                                                 Additional Options
                                             </div>
                                             <div id="advanced-options">
+
+                                                <label for="language">
+                                                    Language:
+                                                </label>
+                                                <br />
+                                                <select id="language">
+                                                    <option value ="English">English</option>
+                                                    <option value ="Spanish">español</option>
+                                                    <option value ="Portuguese">português</option>
+                                                </select>
+
+                                                <br />
+
                                                 <label for="output-type">
                                                     Summarize Output By:
                                                 </label>
@@ -97,9 +113,10 @@
                                                     <option value ="Week">Week</option>
                                                     <option value ="Year">Year</option>
                                                 </select>
+
                                                 <fieldset class="summary-type">
                                                     <legend>Report Summary Total For:</legend>
-                                                            <input id="everyone" name="summary-type" type="radio" value="Total" checked="checked">
+                                                            <input id="everyone" name="summary-type" type="radio" value="Everyone" checked="checked">
                                                                 <label for="everyone">Everyone</label>
                                                             <input id="lost" name="summary-type" type="radio" value="Lost">
                                                                 <label for="lost">Lost</label>
@@ -108,32 +125,40 @@
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>			
+                            </table>
                 </form>
-            
-        </div>	
+
+        </div>
 
 		<div class="block" style="height: 600px;">
 			<div class="centered">
-				<p>More than <span id="deathsPerPeriod">153,639</span> <span class="summary-type-holder"></span>people in <span class="location-holder">the world</span> die and enter eternity every <span class="period-holder">day</span>.</p>
+                <p><span class="rtp-approximately"></span> <span id="deathsPerPeriod"></span> <span class="rtp-people"></span> <span class="location-holder"></span> <span class="rtp-eternity"></span> <span class="period-holder"></span>.</p>
 
-				<p>
-					Since this meeting began<br />
-					<span id="defaultCountdown">0 Seconds</span> 
-					ago, the following number of persons in <span class="location-holder">the world</span> have died and entered eternity <em>without Christ</em>:
-				</p>
+                <p>
+                    <span class="rtp-began"></span> <span id="defaultCountdown"></span>
+                    <span class="rtp-ago"></span>
+                </p>
 
 				<form name="counterContainer">
 					<input type="text" id="counter" size="10">
 				</form>
 			</div>
 		</div>
+
+        <p><a href="https://github.com/Rescue-the-Perishing/rescue-the-perishing" class="pull-right" id="download"><span class="rtp-download">Download</span></a></p>
+
         <script src="js/vendor/jquery/jquery-2.1.0.min.js"></script>
         <script src="js/vendor/countdown/jquery.plugin.min.js"></script>
         <script src="js/vendor/countdown/jquery.countdown.min.js"></script>
+        <script src="js/vendor/countdown/jquery.countdown-es.js"></script>
+        <script src="js/vendor/countdown/jquery.countdown-pt-BR.js"></script>
         <script src="js/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
         <script src="js/vendor/formalize/jquery.formalize.min.js"></script>
         <script src="js/vendor/numeral-js/numeral.min.js"></script>
+        <script src="js/vendor/numeral-js/languages/es.min.js"></script>
+        <script src="js/vendor/numeral-js/languages/pt-br.min.js"></script>
+        <script src="config/defaults.js"></script>
+        <script src="config/languages.js"></script>
         <script src="js/main.js"></script>
 	</body>
 </html>

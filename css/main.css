@@ -59,8 +59,8 @@ textarea {
 
 /* ==========================================================================
    Author's custom styles
-   ========================================================================== */  
-   /* .block, .block:before, .centered are for vertically and horizontally centering the page */ 
+   ========================================================================== */
+   /* .block, .block:before, .centered are for vertically and horizontally centering the page */
 .block {
 	text-align: center;
 	margin: 20px;
@@ -69,20 +69,21 @@ textarea {
 .block:before {
 	content: '';
 	display: inline-block;
-	height: 100%; 
-	margin-right: -0.25em; /* Adjusts for spacing */ 
+	height: 100%;
+	margin-right: -0.25em; /* Adjusts for spacing */
 	vertical-align: middle;
  }
- 
+
 .centered {
 	display: inline-block;
-	padding: 10px 15px;		
+	padding: 10px 15px;
 	vertical-align: middle;
-	width: 565px;			
+	width: 565px;
 }
 
 p {
-	font-size:2em;		
+	font-size:2em;
+    margin-bottom:0;
 }
 
 #counter {
@@ -91,16 +92,14 @@ p {
 	font-size:3em;
 	text-align:center
 }
-
 .configure {
-color:#e55302;
-font-size:1.2em;
-padding-left:10px;
+    font-size:1.2em;
+    padding-left:10px;
 }
 
 .configure  a{
-color:#e55302;
-text-decoration:none;
+    color:#e55302;
+    text-decoration:none;
 }
 
 #advanced-options {
@@ -120,11 +119,40 @@ text-decoration:none;
     padding-top:15px;
 }
 
+#defaultCountdown {
+    text-transform: lowercase;
+}
+
+#download {
+    bottom: .5em;
+    color:#999;
+    font-size:.5em;
+    padding-right:10px;
+    position: absolute;
+    right: 0;
+    text-decoration:none;
+}
+
+.pull-right {
+    float: right;
+}
+
 .show-advanced-options {
     color:#e55302;
+    cursor:pointer;
     font-size:.8em;
     font-weight: bold;
     padding: 15px 0;
+}
+
+#start-button {
+    background:none;
+    border:none;
+    color:#e55302;
+    font-size:1em;
+    font-weight: normal;
+    padding:0;
+    vertical-align:bottom;
 }
 
 form sup.required {
@@ -155,7 +183,7 @@ form.config-form legend {
 }
 
 form.config-form  select {
-font-size:1em;
+    font-size:1em;
 }
 
 /*for Magnific Popup*/
@@ -165,7 +193,7 @@ font-size:1em;
   max-width:425px;
   padding:20px;
   position:relative;
-  width:auto; 
+  width:auto;
 }
 
 /* ==========================================================================
