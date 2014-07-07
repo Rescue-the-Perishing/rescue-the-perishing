@@ -56,29 +56,19 @@ textarea {
     padding: 0.2em 0;
 }
 
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-   /* .block, .block:before, .centered are for vertically and horizontally centering the page */
-.block {
-	text-align: center;
-	margin: 20px;
-}
-
-.block:before {
-	content: '';
-	display: inline-block;
-	height: 100%;
-	margin-right: -0.25em; /* Adjusts for spacing */
-	vertical-align: middle;
- }
-
-.centered {
-	display: inline-block;
-	padding: 10px 15px;
-	vertical-align: middle;
-	width: 565px;
+.absolute-center {
+    width: 50%;
+    height: 70%;
+    overflow: auto;
+    margin: auto;
+    max-width: 550px;
+    min-width: 400px;
+    position: absolute;
+    text-align:center;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 p {
@@ -86,12 +76,14 @@ p {
     margin-bottom:0;
 }
 
-#counter {
+form.counter  input{
 	border:0;
 	color:red;
 	font-size:3em;
-	text-align:center
+	text-align:center;
+    width: 100%;
 }
+
 .configure {
     font-size:1.2em;
     padding-left:10px;
@@ -201,6 +193,36 @@ form.config-form  select {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
+
+}
+
+@media only screen and (max-device-width: 480px) {
+
+    .absolute-center {
+        height: 50%;
+        min-width: 300px;
+    }
+
+    p {
+        font-size:1.2em;
+    }
+
+    form.counter  input{
+        font-size:2em;
+    }
+    
+    #download {
+        font-size:.8em;
+    }
+
+    form.config-form {
+        font-size:.9em;
+    }
+
+    form.config-form  input{
+        font-size:1em;
+        margin-bottom:5px;
+    }
 
 }
 
