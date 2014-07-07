@@ -348,22 +348,22 @@ function setWording(language) {
     //Set period text based on user's selection (Second, Minute, Hour, Day, Week, or Year) and corresponding translation
     switch (period) {
     case "Second":
-        period = phrases.rtpSecond;
+        period = phrases.rtpSecond + ".";
         break;
     case "Minute":
-        period = phrases.rtpMinute;
+        period = phrases.rtpMinute + ".";
         break;
     case "Hour":
-        period = phrases.rtpHour;
+        period = phrases.rtpHour + ".";
         break;
     case "Day":
-        period = phrases.rtpDay;
+        period = phrases.rtpDay + ".";
         break;
     case "Week":
-        period = phrases.rtpWeek;
+        period = phrases.rtpWeek + ".";
         break;
     case "Year":
-        period = phrases.rtpYear;
+        period = phrases.rtpYear + ".";
         break;
     default:
         //return error message if receive non-expected input
