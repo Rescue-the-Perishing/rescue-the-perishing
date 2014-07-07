@@ -185,11 +185,11 @@ function realTimeMortalityCounter() {
     "use strict";
 
     var deathsPerSecond = calculateDeathsPerPeriod("Second", "Lost"),
-        i = 0,
-        counterTimeOutID = "";
+        counterTimeOutID = setCorrectingInterval(incrementCounter, 1000),
+        i = 0;
 
-    //Using setTimeout because setInterval is not as reliable.
-    counterTimeOutID = setTimeout(incrementCounter, 1000);
+    //Using custom setInterval because setInterval and setTimeout are not reliable enough.
+    setCorrectingInterval(counterTimeOutID);
 
     //Nested the incrementCounter function inside to avoid needing global variables for for the real-time mortality counter
     function incrementCounter() {
@@ -209,9 +209,6 @@ function realTimeMortalityCounter() {
 
         //Update the display of the counter via jQuery
         $("#counter").val(prettyFormat);
-
-        //Since setInterval was used, rerun setTimeout after 1 second (1000 milliseconds) on each execution to achieve a similar effect.
-        counterTimeOutID = setTimeout(incrementCounter, 1000);
     }
 }
 
