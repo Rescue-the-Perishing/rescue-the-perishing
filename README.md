@@ -248,6 +248,7 @@ To help you tailor the program to specific population segments, we recommend the
 
 ## <a name="acknowledgments"></a>Acknowledgments
 
+- [correctingInterval](https://github.com/aduth/correctingInterval)
 - [Countdown for jQuery](http://www.keith-wood.name/countdown.html)
 - [jQuery](https://jquery.org)
 - [formalize](http://formalize.me/)
@@ -266,6 +267,7 @@ All other works are licensed under the [Creative Commons Attribution-ShareAlike 
 
 ### <a name="licenses-for-other-components"></a>Licenses for other Components
 
+- correctingInterval: [MIT](https://github.com/aduth/correctingInterval/blob/master/LICENSE.txt)
 - Countdown for jQuery: [MIT](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
 - jQuery: [MIT](https://jquery.org/license/)
 - formalize: [GNU GENERAL PUBLIC LICENSE](http://www.gnu.org/licenses/gpl.html) and [MIT](http://opensource.org/licenses/mit-license.php)

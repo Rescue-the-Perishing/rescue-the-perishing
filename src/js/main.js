@@ -162,16 +162,6 @@ function calculateDeathsPerPeriod(period, type) {
     }
 }
 
-function calculateCounterRate() {
-/*Return the value needed to make the by  mortality rate count-up counter run at the correct rate based on user inputs*/
-
-    "use strict";
-
-    //Calculate variable to be used by setTimeout within the display() function
-    var forTimeOut = 100 / calculateDeathsPerPeriod("Second", "Lost");  //not sure why deaths of lost per second is divided into 100, but it works
-    return forTimeOut;
-}
-
 function startTime(languageCode) {
 /*Configure and display the time elapsed timer (i.e, jquery.countdown)*/
 
@@ -189,39 +179,37 @@ function startTime(languageCode) {
     });
 }
 
-/*Display the mortality rate count-up counter, inserting commas as necessary*/
-/*By George Chiang. (JK's ultimate JavaScript tutorial and free JavaScripts site!)
-http://www.javascriptkit.com
-Credit MUST stay intact for use*/
-var milisec = 0;
-var seconds = 0;
-document.counterContainer.counter.value = '0';
+function realTimeMortalityCounter() {
+/*Execute the real-time mortality counter every second (1000 milliseconds) */
 
-function display() {
     "use strict";
 
-    var forTimeOut = calculateCounterRate();
+    var deathsPerSecond = calculateDeathsPerPeriod("Second", "Lost"),
+        counterTimeOutID = setCorrectingInterval(incrementCounter, 1000),
+        i = 0;
 
-    if (milisec >= 9) {
-        milisec = 0;
-        seconds += 1;
-    } else {
-        milisec += 1;
+    //Using custom setInterval because setInterval and setTimeout are not reliable enough.
+    setCorrectingInterval(counterTimeOutID);
+
+    //Nested the incrementCounter function inside to avoid needing global variables for for the real-time mortality counter
+    function incrementCounter() {
+    /*Increment the real-time mortality counter by deaths per second*/
+
+        var prettyFormat = "",
+            rtpCurrentCount = 0;
+
+        ++i;
+
+        //Each time tickCounter() runs, update the counter to show the number of deaths that have occurred.
+        //because this runs every second, the death count equals deaths per second times the number of times this code has run (once a second)
+        rtpCurrentCount = deathsPerSecond * i;
+
+        //use the numeral-js default format to round the counter and insert thousands separator.
+        prettyFormat = numeral(rtpCurrentCount).format();
+
+        //Update the display of the counter via jQuery
+        $("#counter").val(prettyFormat);
     }
-
-    Number.prototype.insertComma = function () {
-        var s = this.toString(),
-            temp = '';
-        for (var i=s.length-1;i>=0;i-=3) {
-            if ((i-3)>=0) temp = "," + s.substr(i-2, 3) + temp;
-            else temp = s.substring(0, i+1) + temp;
-        }
-        return temp;
-    };
-
-    document.counterContainer.counter.value = seconds.insertComma();
-
-    setTimeout("display()", forTimeOut);
 }
 
 function insertDefaults() {
@@ -357,22 +345,22 @@ function setWording(language) {
     //Set period text based on user's selection (Second, Minute, Hour, Day, Week, or Year) and corresponding translation
     switch (period) {
     case "Second":
-        period = phrases.rtpSecond;
+        period = phrases.rtpSecond + ".";
         break;
     case "Minute":
-        period = phrases.rtpMinute;
+        period = phrases.rtpMinute + ".";
         break;
     case "Hour":
-        period = phrases.rtpHour;
+        period = phrases.rtpHour + ".";
         break;
     case "Day":
-        period = phrases.rtpDay;
+        period = phrases.rtpDay + ".";
         break;
     case "Week":
-        period = phrases.rtpWeek;
+        period = phrases.rtpWeek + ".";
         break;
     case "Year":
-        period = phrases.rtpYear;
+        period = phrases.rtpYear + ".";
         break;
     default:
         //return error message if receive non-expected input
@@ -438,7 +426,7 @@ function initiateDisplay() {
     startTime(obtainLanguageCode(language));
 
     //start the mortality counter
-    display();
+    realTimeMortalityCounter();
 
     //hide the configuration link text
     $("p.configure").hide();
@@ -515,7 +503,7 @@ $(document).ready(function () {
     //Insert items not set by the setWording function
     $('#deathsPerPeriod').html(deathsPerPeriod);
     $('.period-holder').html(period.toLowerCase());
-    
+
     //Ensure the real-time mortality counter returns to 0 on page reload (without doing this IE retains old counter value)
     $('#counter').val("0");
 
