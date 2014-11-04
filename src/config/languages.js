@@ -6,7 +6,7 @@ var english =
             rtp_Lost : "<em>lost</em> people",
             rtp_Eternity : "die every",
             rtp_In : "in",
-            rtp_Began : "The number people who have entered eternity <em>without Christ</em> since",
+            rtp_Began : "The number of people who have entered eternity <em>without Christ</em> since",
             rtp_Ago : "ago is:",
             rtp_Download : "Download",
             rtp_Second : "Second",
