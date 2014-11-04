@@ -65,20 +65,10 @@ var english =
  * If this syntax is not adhered to, the program will not work as expected.
  * Each of the phrases accept alpha-numeric values.
  *
-<<<<<<< HEAD
- * In some languages, a preposition should not be added to the end of the `rtpPeople` and `rtpLost`
- * phrases because the preposition needed may change based on the user's provided location.
- * For example, in Italian the correct preposition would need to be "nel" (literally "in the") if the provided
- * location was the Italian equivalent of world or "in" (literally "in") if the provided location was the
- * Italian equivalent of Italy. Leaving off the preposition in the translation file helps overcome this issue
- * because the location can be prefixed with the correct preposition in the defaults file and/or by the user
- * at runtime.
-=======
- * In some languages, a preposition should not be added to the end of the `rtp_People` and `rtp_Lost`
- * phrases because the preposition needed may change based on the user's provided location.
- * For example, in Italian the correct preposition would need to be "nel" (literally "in the") if the provided
- * location was the Italian equivalent of world or "in" (literally "in") if the provided location was the
- * Italian equivalent of Italy. Leaving off the preposition in the translation file helps overcome this issue
- * because the location can be prefixed with the correct preposition in the defaults file and/or by the user
- * at runtime.
+ * In some languages, the preposition needed before the location varies based on provided input. In Italian,
+ * for example, the correct preposition would be "nel" (literally "in the") if the provided location was
+ * the Italian equivalent of world (i.e., in the world). However, the correct preposition would be "in"
+ * (literally "in") if the provided location was the Italian equivalent of Italy (i.e., in Italy). In
+ * languages such as Italian, 'rtp_In' should be "" and the correct preposition should be provided in the
+ * defaults file and/or by the user at runtime.
  */
