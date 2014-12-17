@@ -267,6 +267,7 @@ function setWording(language) {
                 rtpPeople : "",
                 rtpLost : "",
                 rtpEternity : "",
+                rtpIn : "",
                 rtpBegan : "",
                 rtpAgo : "",
                 rtpDownload : "",
@@ -287,6 +288,7 @@ function setWording(language) {
         phrases.rtpPeople = spanish.rtp_People;
         phrases.rtpLost = spanish.rtp_Lost;
         phrases.rtpEternity = spanish.rtp_Eternity;
+        phrases.rtpIn = spanish.rtp_In;
         phrases.rtpBegan = spanish.rtp_Began;
         phrases.rtpAgo = spanish.rtp_Ago;
         phrases.rtpDownload = spanish.rtp_Download;
@@ -303,6 +305,7 @@ function setWording(language) {
         phrases.rtpPeople = portuguese.rtp_People;
         phrases.rtpLost = portuguese.rtp_Lost;
         phrases.rtpEternity = portuguese.rtp_Eternity;
+        phrases.rtpIn = portuguese.rtp_In;
         phrases.rtpBegan = portuguese.rtp_Began;
         phrases.rtpAgo = portuguese.rtp_Ago;
         phrases.rtpDownload = portuguese.rtp_Download;
@@ -319,6 +322,7 @@ function setWording(language) {
         phrases.rtpPeople = english.rtp_People;
         phrases.rtpLost = english.rtp_Lost;
         phrases.rtpEternity = english.rtp_Eternity;
+        phrases.rtpIn = english.rtp_In;
         phrases.rtpBegan = english.rtp_Began;
         phrases.rtpAgo = english.rtp_Ago;
         phrases.rtpDownload = english.rtp_Download;
@@ -336,6 +340,11 @@ function setWording(language) {
         phrases.rtpPeople = phrases.rtpLost;
    }
 
+    //If location is blank, use the default
+    if (location === "") {
+        location = defaults.location;
+   }
+
     //change 0 seconds place-holder wording based on language code
     phrases.rtpDefaultCountdown = "0 " + phrases.rtpSeconds;
 
@@ -345,22 +354,22 @@ function setWording(language) {
     //Set period text based on user's selection (Second, Minute, Hour, Day, Week, or Year) and corresponding translation
     switch (period) {
     case "Second":
-        period = phrases.rtpSecond + ".";
+        period = phrases.rtpSecond;
         break;
     case "Minute":
-        period = phrases.rtpMinute + ".";
+        period = phrases.rtpMinute;
         break;
     case "Hour":
-        period = phrases.rtpHour + ".";
+        period = phrases.rtpHour;
         break;
     case "Day":
-        period = phrases.rtpDay + ".";
+        period = phrases.rtpDay;
         break;
     case "Week":
-        period = phrases.rtpWeek + ".";
+        period = phrases.rtpWeek;
         break;
     case "Year":
-        period = phrases.rtpYear + ".";
+        period = phrases.rtpYear;
         break;
     default:
         //return error message if receive non-expected input
@@ -374,6 +383,7 @@ function setWording(language) {
     $('.rtp-approximately').html(phrases.rtpApproximately);
     $('.rtp-people').html(phrases.rtpPeople);
     $('.rtp-eternity').html(phrases.rtpEternity);
+    $('.rtp-in').html(phrases.rtpIn);
     $('.rtp-began').html(phrases.rtpBegan);
     $('.rtp-ago').html(phrases.rtpAgo);
     $('#defaultCountdown').html(phrases.rtpDefaultCountdown);
@@ -381,7 +391,7 @@ function setWording(language) {
     $('.summary-type-holder').html(phrases.rtpPeople);
     $('.period-holder').html(period.toLowerCase());
     $('#deathsPerPeriod').html(deathsPerPeriod);
-    $('.location-holder').html(location);
+    $('.location-holder').html(location + "."); //add a period to the location because it's the last phrase in the first sentence.
 
 }
 
@@ -510,5 +520,6 @@ $(document).ready(function () {
     //make page wording show the selected translation
     setWording(defaults.language);
 
-    $('.location-holder').html(defaults.location);
+    //Insert the location, followed by a period.
+    $('.location-holder').html(defaults.location + ".");
 });

@@ -2,11 +2,12 @@
 var english =
         {
             rtp_Approximately : "Around",
-            rtp_People : "people in",
-            rtp_Lost : "<em>lost</em> people in",
+            rtp_People : "people",
+            rtp_Lost : "<em>lost</em> people",
             rtp_Eternity : "die every",
-            rtp_Began : "Since",
-            rtp_Ago : "ago, the following number of those people have entered eternity <em>without Christ</em>:",
+            rtp_In : "in",
+            rtp_Began : "The number of people who have entered eternity <em>without Christ</em> since",
+            rtp_Ago : "ago is:",
             rtp_Download : "Download",
             rtp_Second : "Second",
             rtp_Seconds : "Seconds",
@@ -19,12 +20,13 @@ var english =
 
     spanish =
         {
-            rtp_Approximately : "Acerca de",
-            rtp_People : "personas en",
-            rtp_Lost : "personas <em>perdidas</em> en",
+            rtp_Approximately : "Cerca de",
+            rtp_People : "personas",
+            rtp_Lost : "personas <em>perdidas</em>",
             rtp_Eternity : "mueren cada",
-            rtp_Began : "Desde",
-            rtp_Ago : "atrás, el siguiente número de esas personas han entrado a la eternidad <em>sin Cristo</em>:",
+            rtp_In : "en",
+            rtp_Began : "El número de personas que han entrado a la eternidad <em>sin Cristo</em> desde",
+            rtp_Ago : "atrás es:",
             rtp_Download : "Descargar",
             rtp_Second : "Segundo",
             rtp_Seconds : "Segundos",
@@ -38,11 +40,12 @@ var english =
     portuguese =
         {
             rtp_Approximately : "Cerca de",
-            rtp_People : "pessoas em",
-            rtp_Lost : "pessoas <em>perdidas</em> em",
+            rtp_People : "pessoas",
+            rtp_Lost : "pessoas <em>perdidas</em>",
             rtp_Eternity : "morrem a cada",
             rtp_Began : "Nos últimos",
-            rtp_Ago : "o seguinte número dessas pessoas passaram a vida eterna <em>sem Jesus Cristo</em>:",
+            rtp_In : "em",
+            rtp_Ago : "este número de pessoas ja moreram e passarão a vida eterna <em>sem Jesus Cristo</em>:",
             rtp_Download : "Baixar",
             rtp_Second : "Segundo",
             rtp_Seconds : "Segundos",
@@ -62,11 +65,10 @@ var english =
  * If this syntax is not adhered to, the program will not work as expected.
  * Each of the phrases accept alpha-numeric values.
  *
- * In some languages, a preposition should not be added to the end of the `rtp_People` and `rtp_Lost`
- * phrases because the preposition needed may change based on the user's provided location.
- * For example, in Italian the correct preposition would need to be "nel" (literally "in the") if the provided
- * location was the Italian equivalent of world or "in" (literally "in") if the provided location was the
- * Italian equivalent of Italy. Leaving off the preposition in the translation file helps overcome this issue
- * because the location can be prefixed with the correct preposition in the defaults file and/or by the user
- * at runtime.
+ * In some languages, the preposition needed before the location varies based on provided input. In Italian,
+ * for example, the correct preposition would be "nel" (literally "in the") if the provided location was
+ * the Italian equivalent of world (i.e., in the world). However, the correct preposition would be "in"
+ * (literally "in") if the provided location was the Italian equivalent of Italy (i.e., in Italy). In
+ * languages such as Italian, 'rtp_In' should be "" and the correct preposition should be provided in the
+ * defaults file and/or by the user at runtime.
  */

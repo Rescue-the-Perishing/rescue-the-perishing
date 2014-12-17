@@ -170,11 +170,12 @@ A copy of the relevant contents of the provided `languages.js` file is shown bel
 var english =
 {
     rtp_Approximately : "Around",
-    rtp_People : "people in",
-    rtp_Lost : "<em>lost</em> people in",
+    rtp_People : "people",
+    rtp_Lost : "<em>lost</em> people",
     rtp_Eternity : "die every",
-    rtp_Began : "Since",
-    rtp_Ago : "ago, the following number of those people have entered eternity <em>without Christ</em>:",
+    rtp_In : "in",
+    rtp_Began : "The number people who have entered eternity <em>without Christ</em> since",
+    rtp_Ago : "ago is:",
     rtp_Download : "Download",
     rtp_Second : "Second",
     rtp_Seconds : "Seconds",
@@ -192,10 +193,11 @@ var english =
 var english =
 {
     rtp_Approximately : "Around",
-    rtp_People : "people in",
-    rtp_Lost : "<em>lost</em> people in",
+    rtp_People : "people",
+    rtp_Lost : "<em>lost</em> people",
     rtp_Eternity : "die every",
-    rtp_Began : "Since our meeting began",
+    rtp_Began : "Since",
+    rtp_In : "in",
     rtp_Ago : "ago, the following number of those people have entered eternity <em>without Christ</em>:",
     rtp_Download : "Download",
     rtp_Second : "Second",
@@ -210,7 +212,7 @@ var english =
 
 >_**Tip:** HTML tags for **strong** (`<strong>` and `</strong>`) and *emphasis* (`<em>` and `<em>`) can be used to enhance the output format of words and phrases._
 
->_**Tip:** In some languages, a preposition should not be added to the end of the `rtp_People` and `rtp_Lost` phrases because the preposition needed may change based on the user's provided location. in Italian, for example, the correct preposition would be "nel" (literally "in the") if the provided location was the Italian equivalent of world. However, if the provided location was the Italian equivalent of Italy, the correct preposition would be "in" (literally "in"). Leaving off the preposition in the translation file helps overcome this issue because the location can be prefixed with the correct preposition in the defaults file and/or by the user at runtime._
+>_**Tip:** In some languages, the preposition needed before the location varies based on provided input. In Italian, for example, the correct preposition would be "nel" (literally "in the") if the provided location was the Italian equivalent of world (i.e., in the world). However, the correct preposition would be "in" (literally "in") if the provided location was the Italian equivalent of Italy (i.e., in Italy). In languages such as Italian, `rtp_In` should be `""` and the correct preposition should be provided in the defaults file and/or by the user at runtime._
 
 ## <a name="additional-resources"></a>Additional Resources
 
