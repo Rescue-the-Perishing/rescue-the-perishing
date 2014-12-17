@@ -268,7 +268,7 @@ All other works are licensed under the [Creative Commons Attribution-ShareAlike 
 ### <a name="licenses-for-other-components"></a>Licenses for other Components
 
 - correctingInterval [MIT](https://github.com/aduth/correctingInterval/blob/master/LICENSE.txt)
-- Countdown for jQuery: [MIT](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
+- Countdown for jQuery: [MIT](http://www.keith-wood.name/countdown.html)
 - jQuery: [MIT](https://jquery.org/license/)
 - formalize: [GNU GENERAL PUBLIC LICENSE](http://www.gnu.org/licenses/gpl.html) and [MIT](http://opensource.org/licenses/mit-license.php)
 - HTML5 Boilerplate: [MIT](https://github.com/h5bp/html5-boilerplate/blob/master/LICENSE.md)
