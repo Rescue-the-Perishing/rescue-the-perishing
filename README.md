@@ -100,7 +100,7 @@ In addition to providing the data used to calculate the death rate for a given p
 
 ### <a name="customizing-defaults"></a>Customizing Defaults
 
-The default values are stored within the `defaults.js` file located within the `config` directory.
+The default values are stored within the [defaults.js](/src/config/defaults.js) file located within the [config](/src/config/) directory.
 
 >_**Tip:** It is recommended making a copy of the `config` directory in case you need to recover the original settings. The copied directory could be named `config-backup` and stored in the location of your choosing._
 
@@ -149,7 +149,7 @@ var defaults =
 
 ### <a name="customizing-translations"></a>Customizing Translations
 
-The default values are stored within the `languages.js` file located within the `config` directory.
+The default values are stored within the [languages.js](/src/config/languages.js) file located within the [config](/src/config/) directory.
 
 >_**Tip:** It is recommended making a copy of the `config` directory in case you need to recover the original settings. The copied directory could be named `languages-backup` and stored in the location of your choosing._
 
