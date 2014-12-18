@@ -17,6 +17,7 @@ Defaults, based on world-wide statistics from reliable sources, are provided as 
 - [Additional Resources](#additional-resources)
     - [Recommended Data Sources](#recommended-data-sources)
     - [About the Provided Defaults](#about-the-provided-defaults)
+    - [Example Sermon](#sermon)
 - [Acknowledgments](#acknowledgments)
     - [Usage](#usage)
 - [Licenses](#licenses)
@@ -247,6 +248,10 @@ To help you tailor the program to specific population segments, we recommend the
 - **Report Summary Total For** - The default `report_summary_total` is set to `Everyone`.
 
 *Values used are based on data last retrieved on June 28, 2014.*
+
+### <a name="sermon"></a>Example Sermon
+
+To help  those of you who would like to display this application in the background during a sermon, an example sermon titled *Obstacles to the Gospel* has been provided in the [resources](/resources/) directory. With minor variations, this sermon is available in [English](/resources/obstacles-to-the-gospel.md), [Portuguese](/resources/obstaculos-do-evangelho.md), and [Spanish](/resources/los-obstaculos-del-evangelio.md).
 
 ## <a name="acknowledgments"></a>Acknowledgments
 
