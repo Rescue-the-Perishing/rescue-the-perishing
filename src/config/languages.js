@@ -37,6 +37,25 @@ var english =
             rtp_Year : "Año"
         },
 
+    italian =
+        {
+            rtp_Approximately : "Circa",
+            rtp_People : "persone",
+            rtp_Lost : "persone <em>perdute</em>",
+            rtp_Eternity : "muoiono ogni",
+            rtp_In : "",
+            rtp_Began : "Il numero di persone che sono passate all'eternità <em>senza Cristo</em> da",
+            rtp_Ago : "fa è:",
+            rtp_Download : "Scaricare",
+            rtp_Second : "Secondo",
+            rtp_Seconds : "Secondi",
+            rtp_Minute : "Minuto",
+            rtp_Hour : "Ora",
+            rtp_Day : "Giorno",
+            rtp_Week : "Settimana",
+            rtp_Year : "Anno"
+        };
+
     portuguese =
         {
             rtp_Approximately : "Cerca de",

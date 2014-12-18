@@ -232,6 +232,9 @@ function obtainLanguageCode(language) {
     case "Spanish":
         languageCode = "es";
         break;
+    case "Italian":
+        languageCode = "it";
+        break;
     case "Portuguese":
         languageCode = "pt-br";
         break;
@@ -299,6 +302,23 @@ function setWording(language) {
         phrases.rtpDay = spanish.rtp_Day;
         phrases.rtpWeek = spanish.rtp_Week;
         phrases.rtpYear = spanish.rtp_Year;
+        break;
+    case "Italian":
+        phrases.rtpApproximately = italian.rtp_Approximately;
+        phrases.rtpPeople = italian.rtp_People;
+        phrases.rtpLost = italian.rtp_Lost;
+        phrases.rtpEternity = italian.rtp_Eternity;
+        phrases.rtpIn = italian.rtp_In;
+        phrases.rtpBegan = italian.rtp_Began;
+        phrases.rtpAgo = italian.rtp_Ago;
+        phrases.rtpDownload = italian.rtp_Download;
+        phrases.rtpSecond = italian.rtp_Second;
+        phrases.rtpSeconds = italian.rtp_Seconds;
+        phrases.rtpMinute = italian.rtp_Minute;
+        phrases.rtpHour = italian.rtp_Hour;
+        phrases.rtpDay = italian.rtp_Day;
+        phrases.rtpWeek = italian.rtp_Week;
+        phrases.rtpYear = italian.rtp_Year;
         break;
     case "Portuguese":
         phrases.rtpApproximately = portuguese.rtp_Approximately;

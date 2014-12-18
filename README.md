@@ -4,7 +4,7 @@ The Rescue the Perishing application is designed to increase awareness of how ma
 
 This application is able to calculate the number of people estimated to have died over a specified time-frame for a given location. The calculation is performed using either pre-defined defaults or user provided data for the population, crude death rate, and reached rate. The reported number of deaths can be configured to show estimated deaths for only the lost portion of the population or for everyone (i.e., reached and lost). The application also has a real-time mortality counter which shows the number of *lost* individuals estimated to have died in the time elapsed since the application was started.
 
-Defaults, based on world-wide statistics from reliable sources, are provided as a starting point. These defaults can be changed to tailor the program to a specific population segment and/or theological position. Additionally, results can be displayed in multiple languages (currently English, Spanish and Portuguese). Please see below for further information on how to configure and customize the application to meet your needs.
+Defaults, based on world-wide statistics from reliable sources, are provided as a starting point. These defaults can be changed to tailor the program to a specific population segment and/or theological position. Additionally, results can be displayed in multiple languages (currently English, Italian, Spanish, and Portuguese). Please see below for further information on how to configure and customize the application to meet your needs.
 
 #Table of Contents
 - [Demo](#demo)
