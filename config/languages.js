@@ -1,53 +1,93 @@
- var english =
-    {
-        rtp_Approximately : "Around",
-        rtp_People : "people in",
-        rtp_Lost : "<em>lost</em> people in",
-        rtp_Eternity : "die every",
-        rtp_Began : "Since",
-        rtp_Ago : "ago, the following number of those people have entered eternity <em>without Christ</em>:",
-        rtp_Download : "Download",
-        rtp_Second : "Second",
-        rtp_Seconds : "Seconds",
-        rtp_Minute : "Minute",
-        rtp_Hour : "Hour",
-        rtp_Day : "Day",
-        rtp_Week : "Week",
-        rtp_Year : "Year"
-    },
+//Please read the help information at the end of this file before editing
+var english =
+        {
+            rtp_Approximately : "Around",
+            rtp_People : "people",
+            rtp_Lost : "<em>lost</em> people",
+            rtp_Eternity : "die every",
+            rtp_In : "in",
+            rtp_Began : "The number of people who have entered eternity <em>without Christ</em> since",
+            rtp_Ago : "ago is:",
+            rtp_Download : "Download",
+            rtp_Second : "Second",
+            rtp_Seconds : "Seconds",
+            rtp_Minute : "Minute",
+            rtp_Hour : "Hour",
+            rtp_Day : "Day",
+            rtp_Week : "Week",
+            rtp_Year : "Year"
+        },
 
     spanish =
-    {
-        rtp_Approximately : "Acerca de",
-        rtp_People : "personas en",
-        rtp_Lost : "personas <em>perdidas</em> en",
-        rtp_Eternity : "mueren cada",
-        rtp_Began : "Desde",
-        rtp_Ago : "atrás, el siguiente número de esas personas han entrado a la eternidad <em>sin Cristo</em>:",
-        rtp_Download : "Descargar",
-        rtp_Second : "Segundo",
-        rtp_Seconds : "Segundos",
-        rtp_Minute : "Minuto",
-        rtp_Hour : "Hora",
-        rtp_Day : "Día",
-        rtp_Week : "Semana",
-        rtp_Year : "Año"
-    },
+        {
+            rtp_Approximately : "Cerca de",
+            rtp_People : "personas",
+            rtp_Lost : "personas <em>perdidas</em>",
+            rtp_Eternity : "mueren cada",
+            rtp_In : "en",
+            rtp_Began : "El número de personas que han entrado a la eternidad <em>sin Cristo</em> desde",
+            rtp_Ago : "atrás es:",
+            rtp_Download : "Descargar",
+            rtp_Second : "Segundo",
+            rtp_Seconds : "Segundos",
+            rtp_Minute : "Minuto",
+            rtp_Hour : "Hora",
+            rtp_Day : "Día",
+            rtp_Week : "Semana",
+            rtp_Year : "Año"
+        },
+
+    italian =
+        {
+            rtp_Approximately : "Circa",
+            rtp_People : "persone",
+            rtp_Lost : "persone <em>perdute</em>",
+            rtp_Eternity : "muoiono ogni",
+            rtp_In : "",
+            rtp_Began : "Il numero di persone che sono passate all'eternità <em>senza Cristo</em> da",
+            rtp_Ago : "fa è:",
+            rtp_Download : "Scaricare",
+            rtp_Second : "Secondo",
+            rtp_Seconds : "Secondi",
+            rtp_Minute : "Minuto",
+            rtp_Hour : "Ora",
+            rtp_Day : "Giorno",
+            rtp_Week : "Settimana",
+            rtp_Year : "Anno"
+        };
 
     portuguese =
-    {
-        rtp_Approximately : "Cerca de",
-        rtp_People : "pessoas em",
-        rtp_Lost : "pessoas <em>perdidas</em> em",
-        rtp_Eternity : "morrem a cada",
-        rtp_Began : "Nos últimos",
-        rtp_Ago : "o seguinte número dessas pessoas passaram a vida eterna <em>sem Jesus Cristo</em>:",
-        rtp_Download : "Baixar",
-        rtp_Second : "Segundo",
-        rtp_Seconds : "Segundos",
-        rtp_Minute : "Minuto",
-        rtp_Hour : "Hora",
-        rtp_Day : "Dia",
-        rtp_Week : "Semana",
-        rtp_Year : "Ano"
-    };
+        {
+            rtp_Approximately : "Cerca de",
+            rtp_People : "pessoas",
+            rtp_Lost : "pessoas <em>perdidas</em>",
+            rtp_Eternity : "morrem a cada",
+            rtp_Began : "Nos últimos",
+            rtp_In : "em",
+            rtp_Ago : "este número de pessoas ja moreram e passarão a vida eterna <em>sem Jesus Cristo</em>:",
+            rtp_Download : "Baixar",
+            rtp_Second : "Segundo",
+            rtp_Seconds : "Segundos",
+            rtp_Minute : "Minuto",
+            rtp_Hour : "Hora",
+            rtp_Day : "Dia",
+            rtp_Week : "Semana",
+            rtp_Year : "Ano"
+        };
+
+/*!
+ * Help
+ *
+ * Each of the values to be changed are within double quotes (`"`) following a colon (`: `).
+ * Double quotes (`"`) are *not* permitted within the provided values.
+ * Nothing else within this file should be changed.
+ * If this syntax is not adhered to, the program will not work as expected.
+ * Each of the phrases accept alpha-numeric values.
+ *
+ * In some languages, the preposition needed before the location varies based on provided input. In Italian,
+ * for example, the correct preposition would be "nel" (literally "in the") if the provided location was
+ * the Italian equivalent of world (i.e., in the world). However, the correct preposition would be "in"
+ * (literally "in") if the provided location was the Italian equivalent of Italy (i.e., in Italy). In
+ * languages such as Italian, 'rtp_In' should be "" and the correct preposition should be provided in the
+ * defaults file and/or by the user at runtime.
+ */

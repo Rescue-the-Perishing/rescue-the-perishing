@@ -162,16 +162,6 @@ function calculateDeathsPerPeriod(period, type) {
     }
 }
 
-function calculateCounterRate() {
-/*Return the value needed to make the by  mortality rate count-up counter run at the correct rate based on user inputs*/
-
-    "use strict";
-
-    //Calculate variable to be used by setTimeout within the display() function
-    var forTimeOut = 100 / calculateDeathsPerPeriod("Second", "Lost");  //not sure why deaths of lost per second is divided into 100, but it works
-    return forTimeOut;
-}
-
 function startTime(languageCode) {
 /*Configure and display the time elapsed timer (i.e, jquery.countdown)*/
 
@@ -189,39 +179,37 @@ function startTime(languageCode) {
     });
 }
 
-/*Display the mortality rate count-up counter, inserting commas as necessary*/
-/*By George Chiang. (JK's ultimate JavaScript tutorial and free JavaScripts site!)
-http://www.javascriptkit.com
-Credit MUST stay intact for use*/
-var milisec = 0;
-var seconds = 0;
-document.counterContainer.counter.value = '0';
+function realTimeMortalityCounter() {
+/*Execute the real-time mortality counter every second (1000 milliseconds) */
 
-function display() {
     "use strict";
 
-    var forTimeOut = calculateCounterRate();
+    var deathsPerSecond = calculateDeathsPerPeriod("Second", "Lost"),
+        counterTimeOutID = setCorrectingInterval(incrementCounter, 1000),
+        i = 0;
 
-    if (milisec >= 9) {
-        milisec = 0;
-        seconds += 1;
-    } else {
-        milisec += 1;
+    //Using custom setInterval because setInterval and setTimeout are not reliable enough.
+    setCorrectingInterval(counterTimeOutID);
+
+    //Nested the incrementCounter function inside to avoid needing global variables for for the real-time mortality counter
+    function incrementCounter() {
+    /*Increment the real-time mortality counter by deaths per second*/
+
+        var prettyFormat = "",
+            rtpCurrentCount = 0;
+
+        ++i;
+
+        //Each time tickCounter() runs, update the counter to show the number of deaths that have occurred.
+        //because this runs every second, the death count equals deaths per second times the number of times this code has run (once a second)
+        rtpCurrentCount = deathsPerSecond * i;
+
+        //use the numeral-js default format to round the counter and insert thousands separator.
+        prettyFormat = numeral(rtpCurrentCount).format();
+
+        //Update the display of the counter via jQuery
+        $("#counter").val(prettyFormat);
     }
-
-    Number.prototype.insertComma = function () {
-        var s = this.toString(),
-            temp = '';
-        for (var i=s.length-1;i>=0;i-=3) {
-            if ((i-3)>=0) temp = "," + s.substr(i-2, 3) + temp;
-            else temp = s.substring(0, i+1) + temp;
-        }
-        return temp;
-    };
-
-    document.counterContainer.counter.value = seconds.insertComma();
-
-    setTimeout("display()", forTimeOut);
 }
 
 function insertDefaults() {
@@ -243,6 +231,9 @@ function obtainLanguageCode(language) {
     switch (language) {
     case "Spanish":
         languageCode = "es";
+        break;
+    case "Italian":
+        languageCode = "it";
         break;
     case "Portuguese":
         languageCode = "pt-br";
@@ -279,6 +270,7 @@ function setWording(language) {
                 rtpPeople : "",
                 rtpLost : "",
                 rtpEternity : "",
+                rtpIn : "",
                 rtpBegan : "",
                 rtpAgo : "",
                 rtpDownload : "",
@@ -299,6 +291,7 @@ function setWording(language) {
         phrases.rtpPeople = spanish.rtp_People;
         phrases.rtpLost = spanish.rtp_Lost;
         phrases.rtpEternity = spanish.rtp_Eternity;
+        phrases.rtpIn = spanish.rtp_In;
         phrases.rtpBegan = spanish.rtp_Began;
         phrases.rtpAgo = spanish.rtp_Ago;
         phrases.rtpDownload = spanish.rtp_Download;
@@ -310,11 +303,29 @@ function setWording(language) {
         phrases.rtpWeek = spanish.rtp_Week;
         phrases.rtpYear = spanish.rtp_Year;
         break;
+    case "Italian":
+        phrases.rtpApproximately = italian.rtp_Approximately;
+        phrases.rtpPeople = italian.rtp_People;
+        phrases.rtpLost = italian.rtp_Lost;
+        phrases.rtpEternity = italian.rtp_Eternity;
+        phrases.rtpIn = italian.rtp_In;
+        phrases.rtpBegan = italian.rtp_Began;
+        phrases.rtpAgo = italian.rtp_Ago;
+        phrases.rtpDownload = italian.rtp_Download;
+        phrases.rtpSecond = italian.rtp_Second;
+        phrases.rtpSeconds = italian.rtp_Seconds;
+        phrases.rtpMinute = italian.rtp_Minute;
+        phrases.rtpHour = italian.rtp_Hour;
+        phrases.rtpDay = italian.rtp_Day;
+        phrases.rtpWeek = italian.rtp_Week;
+        phrases.rtpYear = italian.rtp_Year;
+        break;
     case "Portuguese":
         phrases.rtpApproximately = portuguese.rtp_Approximately;
         phrases.rtpPeople = portuguese.rtp_People;
         phrases.rtpLost = portuguese.rtp_Lost;
         phrases.rtpEternity = portuguese.rtp_Eternity;
+        phrases.rtpIn = portuguese.rtp_In;
         phrases.rtpBegan = portuguese.rtp_Began;
         phrases.rtpAgo = portuguese.rtp_Ago;
         phrases.rtpDownload = portuguese.rtp_Download;
@@ -331,6 +342,7 @@ function setWording(language) {
         phrases.rtpPeople = english.rtp_People;
         phrases.rtpLost = english.rtp_Lost;
         phrases.rtpEternity = english.rtp_Eternity;
+        phrases.rtpIn = english.rtp_In;
         phrases.rtpBegan = english.rtp_Began;
         phrases.rtpAgo = english.rtp_Ago;
         phrases.rtpDownload = english.rtp_Download;
@@ -346,6 +358,11 @@ function setWording(language) {
     //Change people to lost phrase if lost is selected
     if (type === "Lost") {
         phrases.rtpPeople = phrases.rtpLost;
+   }
+
+    //If location is blank, use the default
+    if (location === "") {
+        location = defaults.location;
    }
 
     //change 0 seconds place-holder wording based on language code
@@ -386,6 +403,7 @@ function setWording(language) {
     $('.rtp-approximately').html(phrases.rtpApproximately);
     $('.rtp-people').html(phrases.rtpPeople);
     $('.rtp-eternity').html(phrases.rtpEternity);
+    $('.rtp-in').html(phrases.rtpIn);
     $('.rtp-began').html(phrases.rtpBegan);
     $('.rtp-ago').html(phrases.rtpAgo);
     $('#defaultCountdown').html(phrases.rtpDefaultCountdown);
@@ -393,7 +411,7 @@ function setWording(language) {
     $('.summary-type-holder').html(phrases.rtpPeople);
     $('.period-holder').html(period.toLowerCase());
     $('#deathsPerPeriod').html(deathsPerPeriod);
-    $('.location-holder').html(location);
+    $('.location-holder').html(location + "."); //add a period to the location because it's the last phrase in the first sentence.
 
 }
 
@@ -438,7 +456,7 @@ function initiateDisplay() {
     startTime(obtainLanguageCode(language));
 
     //start the mortality counter
-    display();
+    realTimeMortalityCounter();
 
     //hide the configuration link text
     $("p.configure").hide();
@@ -515,12 +533,13 @@ $(document).ready(function () {
     //Insert items not set by the setWording function
     $('#deathsPerPeriod').html(deathsPerPeriod);
     $('.period-holder').html(period.toLowerCase());
-    
+
     //Ensure the real-time mortality counter returns to 0 on page reload (without doing this IE retains old counter value)
     $('#counter').val("0");
 
     //make page wording show the selected translation
     setWording(defaults.language);
 
-    $('.location-holder').html(defaults.location);
+    //Insert the location, followed by a period.
+    $('.location-holder').html(defaults.location + ".");
 });
