@@ -116,9 +116,12 @@ form.counter  input{
 }
 
 #download {
+    font-size:.5em;
+}
+
+.bottom  {
     bottom: .5em;
     color:#999;
-    font-size:.5em;
     position: absolute;
     right: 0;
     text-decoration:none;
