@@ -19,7 +19,6 @@ Defaults, based on world-wide statistics from reliable sources, are provided as 
     - [About the Provided Defaults](#about-the-provided-defaults)
     - [Example Sermon](#sermon)
 - [Acknowledgments](#acknowledgments)
-    - [Usage](#usage)
 - [Licenses](#licenses)
     - [License](#license)
     - [Licenses for other Components](#licenses-for-other-components)
@@ -65,7 +64,7 @@ The Rescue the Perishing application was built with HTML5 and JavaScript to help
 
 ### <a name="configuring"></a>Configuring
 
-In addition to providing the data used to calculate the death rate for a given population segment, several additional settings can be configured within the application to further customize the program output to meet your needs. Each of the main options, links, and buttons within application are described below to help you understand how to best configure Rescue the Perishing.
+In addition to providing the data used to calculate the death rate for a given population segment, several additional settings can be configured within the application to further customize the program output to meet your needs. Each of the main options, links, and buttons within the application are described below to help you understand how to best configure Rescue the Perishing.
 
 - **Configure** - Click Configure to open the configuration menu. This menu allows you to change the program settings and/or preview the pre-configured default values.
 
@@ -237,7 +236,7 @@ To help you tailor the program to specific population segments, we recommend the
 
 - **Crude Death Rate** - The default `deathRate` is `7.89`. It is based on the 2014 estimated death rate (per 1,000 population) for the world as reported in [The World Factbook](https://www.cia.gov/library/publications/the-world-factbook/geos/xx.html)
 
-- **Reached Rate** - The default `reachedRate` value is `7.9`. It is based on population percentage of Evangelicals in the world as reported by [Operation World](http://www.operationworld.org/wrld) Operation World's [glossary](http://www.operationworld.org/glossary) explains how they define Evangelicals.
+- **Reached Rate** - The default `reachedRate` value is `7.9`. It is based on population percentage of Evangelicals in the world as reported by [Operation World](http://www.operationworld.org/wrld). Operation World's [glossary](http://www.operationworld.org/glossary) explains how they define Evangelicals.
 
 - **Location** - The default `location` is set to `the world`.
 
@@ -251,7 +250,7 @@ To help you tailor the program to specific population segments, we recommend the
 
 ### <a name="sermon"></a>Example Sermon
 
-To help  those of you who would like to display this application in the background during a sermon, an example sermon titled *Obstacles to the Gospel* has been provided in the [resources](/resources/) directory. With minor variations, this sermon is available in [English](/resources/obstacles-to-the-gospel.md), [Portuguese](/resources/obstaculos-do-evangelho.md), and [Spanish](/resources/los-obstaculos-del-evangelio.md).
+To help those of you who would like to display this application in the background during a sermon, an example sermon titled *Obstacles to the Gospel* has been provided in the [resources](/resources/) directory. With minor variations, this sermon is available in [English](/resources/obstacles-to-the-gospel.md), [Portuguese](/resources/obstaculos-do-evangelho.md), and [Spanish](/resources/los-obstaculos-del-evangelio.md).
 
 ## <a name="acknowledgments"></a>Acknowledgments
 
