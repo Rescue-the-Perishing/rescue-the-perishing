@@ -25,8 +25,77 @@
         <p class="configure">
             <a href="#configure-popup" class="open-configure-popup-link">Configure</a> |
             <button type="button" id="start-button" onclick="initiateDisplay()" value="Start">Start</button>
+            <a href="#help-popup" class="open-help-popup-link pull-right">Help</a>
         </p>
 
+        <!--
+        Place the configuration form inside a div for an inline Magnific Popup
+        Class mfp-hide is required to hide the popup from the page.
+        -->
+        <div id="help-popup" class="help-popup mfp-hide">
+
+                <h3 id="help">Help</h3>
+                <p>Each of the main options, links, and buttons within the application are described below to help you understand how to best use Rescue the Perishing.</p>
+                <ul>
+                    <li>
+                        <p><strong>Configure</strong> - Click Configure to open the configuration menu. This menu allows you to change the program settings and/or preview the pre-configured default values.</p>
+                    </li>
+                    <li>
+                        <p><strong>Basic Options</strong>
+                        </p>
+                        <ul>
+                            <li>
+                                <p><strong>Population</strong> - Provide the population for your chosen demographic. The <a href="http://www.operationworld.org/">Operation World</a> website is a good source for this data.</p>
+                            </li>
+                            <li>
+                                <p><strong>Crude Death Rate</strong> - Input the crude death rate (number of deaths per 1,000 per year) for your chosen demographic. <a href="https://www.cia.gov/library/publications/the-world-factbook/index.html">The World Factbook</a> is a good source for this data. If you would like to learn more about what is meant by crude death rate, review the <a href="https://en.wikipedia.org/wiki/Mortality_rate">Mortality Rate</a> article on Wikipedia.</p>
+                            </li>
+                            <li>
+                                <p><strong>Reached Rate</strong> - Input the estimated percentage of Christians for your chosen demographic. The <a href="http://www.operationworld.org/">Operation World</a> website is a good source for this data.</p>
+                            </li>
+                            <li>
+                                <p><strong>Location</strong> - Input the name of the location or region the other values are based upon. Remember to use a location name which corresponds to the selected language (i.e., input “el mundo” if the language is set to Spanish rather than “the world”). Also, some locations may need to be prefixed with additional text to make the output wording grammatically correct. For example, if “world” is used as the location, the relevant portion of the application’s English output would be “people in world…”. To make the output grammatically correct, the value should be entered as “the world”.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Additional Options</strong> - Clicking on this will reveal additional configuration options which will help you further refine how the program results will be displayed.</p>
+                        <ul>
+                            <li>
+                                <p><strong>Language</strong> - Use this drop-down to choose which of the available translations is used for the output text.</p>
+                            </li>
+                            <li>
+                                <p><strong>Summarize Output By</strong> - Use this drop-down to configure whether the reported number of deaths shown is for a second, minute, hour, day, week, or year. Changing this value to a longer time-frame is especially helpful when working with smaller population segments.</p>
+                            </li>
+                            <li>
+                                <p><strong>Report Summary Total For</strong> - Use this option to change whether the reported number of deaths show estimated deaths for <em>Everyone</em> (i.e., reached and lost) or for only the <em>Lost</em> portion of the population as determined by the provided Reached Rate.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Preview Defaults</strong> - Click this button to insert the default values into the configuration form.</p>
+                    </li>
+                    <li>
+                        <p><strong>OK</strong> - Click this button to accept your settings and update the output accordingly.</p>
+                    </li>
+                    <li>
+                        <p><strong>Start</strong> - Click Start to execute the program. If custom configuration options are not set before starting, pre-configured default values will be used.</p>
+                    </li>
+                </ul>
+               
+                <p><em><strong>Tip:</strong> To stop or re-configure the program after the counters have been started, refresh the page in your web browser. Please note the program will return to the pre-configured defaults each time the web page is refreshed.</em>
+                </p>
+                
+                <p>Please consult the <a href="https://github.com/Rescue-the-Perishing/rescue-the-perishing">project site</a> or the README.md file for additional help and usage information on topics such as:
+                    <ul>
+                    <li>Installing;</li>
+                    <li>Customizing Defaults; and</li>
+                    <li>Customizing Translations</li>
+                    </ul>
+                </p>
+                <span class="pull-right bottom">version 0.8.5</span>
+        </div>
+        
         <!--
         Place the configuration form inside a div for an inline Magnific Popup
         Class mfp-hide is required to hide the popup from the page.
@@ -167,7 +236,7 @@
             </form>
         </div>
 
-        <p><a href="https://github.com/Rescue-the-Perishing/rescue-the-perishing" class="pull-right" id="download"><span class="rtp-download">Download</span></a></p>
+        <p><a href="https://github.com/Rescue-the-Perishing/rescue-the-perishing" class="pull-right bottom" id="download"><span class="rtp-download">Download</span></a></p>
 
         <script src="js/vendor/jquery/jquery-2.1.0.min.js"></script>
         <script src="js/vendor/countdown/jquery.plugin.min.js"></script>

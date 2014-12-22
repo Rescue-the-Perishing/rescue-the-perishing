@@ -3,6 +3,12 @@
       type:'inline',
       midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
+    
+/*Initialize Magnific Popup when a link with class "open-help-popup-link" is clicked*/
+    $('.open-help-popup-link').magnificPopup({
+      type:'inline',
+      midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
 
 //Show/hide advanced configuration options when clicked via jQuery library
     $( ".show-advanced-options" ).click(function() {

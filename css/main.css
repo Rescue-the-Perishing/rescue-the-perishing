@@ -116,10 +116,12 @@ form.counter  input{
 }
 
 #download {
+    font-size:.5em;
+}
+
+.bottom  {
     bottom: .5em;
     color:#999;
-    font-size:.5em;
-    padding-right:10px;
     position: absolute;
     right: 0;
     text-decoration:none;
@@ -127,6 +129,7 @@ form.counter  input{
 
 .pull-right {
     float: right;
+    padding-right:10px;
 }
 
 .show-advanced-options {
@@ -178,7 +181,7 @@ form.config-form  select {
     font-size:1em;
 }
 
-/*for Magnific Popup*/
+/*for Configure Magnific Popup*/
 .white-popup {
   background:#fff;
   margin:20px auto;
@@ -186,6 +189,25 @@ form.config-form  select {
   padding:20px;
   position:relative;
   width:auto;
+}
+
+/*for Help Magnific Popup*/
+.help-popup {
+  background:#fff;
+  margin:20px auto;
+  max-width:85%;
+  padding:20px;
+  position:relative;
+  width:auto;
+}
+
+.help-popup  a {
+  color: #e55302;
+  text-decoration: none;
+}
+
+.help-popup  p {
+  font-size:1em;
 }
 
 /* ==========================================================================
